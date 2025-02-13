@@ -1,0 +1,1298 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Home
+screenshotPath: ../images/template-previews/home_page.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper">
+  {# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+  {% dnd_area 'dnd_area' class='body-container body-container--home container-fluid-custom', label='Main section' %}
+
+  {# START: Hero single column #}
+  {% dnd_section
+  background_image={
+    "background_position" : "MIDDLE_CENTER",
+    "background_size" : "cover",
+    "image_url" : get_asset_url('../images/alley-bg.jpg')
+  },
+  padding={
+    "default" : {
+      "bottom" : "180px",
+      "top" : "100px"
+    },
+    "mobile" : {
+      "bottom" : "100px",
+      "top" : "50px"
+    }
+  },
+  margin={
+    "mobile" : {
+      "bottom" : "40px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-hero-2",
+        offset=0,
+        width=12,
+        button_1={
+          "button_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "https://484997.hs-sites.com/thrifty/sectors",
+              "type" : "EXTERNAL"
+            }
+          },
+          "button_text" : "Browse Segments"
+        },
+        button_2={
+          "button_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "https://484997.hs-sites.com/thrifty/book-meeting",
+              "type" : "EXTERNAL"
+            }
+          },
+          "button_text" : "Book A Meeting"
+        },
+        heading_text="Freemium HubSpot CMS Theme for <strong>Small businesses</strong>",
+        styles={
+          "background_image_overlay_gradient" : {
+            "colors" : [ {
+              "color" : {
+                "a" : 0.64,
+                "b" : 41,
+                "g" : 29,
+                "r" : 28
+              }
+            }, {
+              "color" : {
+                "a" : 0.64,
+                "b" : 41,
+                "g" : 29,
+                "r" : 28
+              }
+            } ],
+            "side_or_corner" : {
+              "verticalSide" : "BOTTOM"
+            }
+          },
+          "button_1" : {
+            "button_background_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "button_border_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "button_text_color" : {
+              "color" : "#ff9a52",
+              "opacity" : 100
+            }
+          },
+          "heading" : {
+            "heading_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "heading_font_size" : 60
+          },
+          "tagline" : {
+            "tag_line_divider" : true
+          }
+        },
+        tag_line="Build a website with ease"
+      %}
+  {% module_attribute "rich_text" %}
+
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Hero single column #}
+
+  {# START: Card Three column #}
+  {% dnd_section
+  background_color="rgba(243, 243, 247, 1)"
+%}
+  {% dnd_module
+    path="../modules/th-card-1",
+    offset=0,
+    width=12,
+    button={
+      "button_text" : ""
+    },
+    card=[ {
+      "card_button" : {
+        "card_button_link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "https://484997.hs-sites.com/thrifty/sectors/professional-services",
+            "type" : "EXTERNAL"
+          }
+        },
+        "card_button_text" : "Read more"
+      },
+      "card_icon" : {
+        "name" : "User Circle",
+        "type" : "SOLID",
+        "unicode" : "f2bd"
+      },
+      "card_number" : "",
+      "card_text" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>",
+      "card_title" : "Professional Services"
+    }, {
+      "card_button" : {
+        "card_button_link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "https://484997.hs-sites.com/thrifty/sectors/health-and-beauty",
+            "type" : "EXTERNAL"
+          }
+        },
+        "card_button_text" : "Read more"
+      },
+      "card_icon" : {
+        "name" : "Plus Circle",
+        "type" : "SOLID",
+        "unicode" : "f055"
+      },
+      "card_number" : "",
+      "card_text" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>",
+      "card_title" : "Health and<br> Beauty"
+    }, {
+      "card_button" : {
+        "card_button_link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "https://484997.hs-sites.com/thrifty/sectors/nonprofit-and-education",
+            "type" : "EXTERNAL"
+          }
+        },
+        "card_button_text" : "Read more"
+      },
+      "card_icon" : {
+        "name" : "Check Circle",
+        "type" : "SOLID",
+        "unicode" : "f058"
+      },
+      "card_number" : "",
+      "card_text" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>",
+      "card_title" : "Nonprofit & Education"
+    } ],
+    heading_text="",
+    styles={
+      "card" : {
+        "background" : {
+          "card_background_type" : "gradient"
+        },
+        "border" : {
+          "card_border" : {
+            "bottom" : {
+              "color" : "#f3f3f7",
+              "opacity" : 100,
+              "style" : "solid",
+              "width" : {
+                "units" : "px",
+                "value" : 1
+              }
+            },
+            "left" : {
+              "color" : "#f3f3f7",
+              "opacity" : 100,
+              "style" : "solid",
+              "width" : {
+                "units" : "px",
+                "value" : 1
+              }
+            },
+            "right" : {
+              "color" : "#f3f3f7",
+              "opacity" : 100,
+              "style" : "solid",
+              "width" : {
+                "units" : "px",
+                "value" : 1
+              }
+            },
+            "top" : {
+              "color" : "#f3f3f7",
+              "opacity" : 100,
+              "style" : "solid",
+              "width" : {
+                "units" : "px",
+                "value" : 1
+              }
+            }
+          }
+        },
+        "button" : {
+          "card_button_background_color" : {
+            "color" : "#FF0201",
+            "opacity" : 100
+          },
+          "card_button_full_width" : false,
+          "card_button_outline" : true
+        },
+        "card_text" : {
+          "card_text_center" : true
+        },
+        "icon" : {
+          "card_icon_background_color" : {
+            "color" : "#f3f3f7",
+            "opacity" : 100
+          },
+          "card_icon_size" : 60,
+          "icon_background_type" : "circle"
+        },
+        "title" : {
+          "card_title_color" : {
+            "color" : "#1c1d29",
+            "opacity" : 100
+          },
+          "card_title_size" : 30
+        }
+      },
+      "card_background_type" : "",
+      "card_border" : {
+        "bottom" : {
+          "color" : "#dae5ec",
+          "opacity" : 100,
+          "style" : "none",
+          "width" : {
+            "units" : "px",
+            "value" : 1
+          }
+        },       
+        "left" : {
+          "color" : "#dae5ec",
+          "opacity" : 100,
+          "style" : "none",
+          "width" : {
+            "units" : "px",
+            "value" : 1
+          }
+        },
+        "right" : {
+          "color" : "#dae5ec",
+          "opacity" : 100,
+          "style" : "none",
+          "width" : {
+            "units" : "px",
+            "value" : 1
+          }
+        },
+        "top" : {
+          "color" : "#dae5ec",
+          "opacity" : 100,
+          "style" : "none",
+          "width" : {
+            "units" : "px",
+            "value" : 1
+          }
+        }
+      },
+      "card_title_size" : 24,
+      "enable_top_negative" : true,
+      "tagline" : {
+        "tag_line_divider" : true
+      }
+    },
+    tag_line=""
+  %}
+  {% module_attribute "rich_text" %}
+
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+  {# END: Card Three column #}
+
+  {# START: Card Four column Counter #}
+  {% dnd_section %}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-animated-counter",
+        offset=0,
+        width=12,
+        button={
+          "button_text" : ""
+        },
+        card=[ {
+          "card_content" : "<p style=\'font-size: 18px;\'>Happy Customers</p>",
+          "card_number" : "219",
+          "card_suffix" : "+"
+        }, {
+          "card_content" : "<p style=\'font-size: 18px;\'>Sales Calls</p>",
+          "card_number" : "6500",
+          "card_suffix" : "H"
+        }, {
+          "card_content" : "<p style=\'font-size: 18px;\'>Team members</p>",
+          "card_number" : "100",
+          "card_suffix" : "+"
+        }, {
+          "card_content" : "<p style=\'font-size: 18px;\'>Global Revenue</p>",
+          "card_number" : "3000",
+          "card_suffix" : "K"
+        } ],
+        heading_text="Grow with <strong>Thrifty</strong>",
+        styles={
+          "card" : {
+            "background" : {
+              "card_background_gradient" : {
+                "colors" : [ {
+                  "color" : {
+                    "a" : 1,
+                    "b" : 238,
+                    "g" : 231,
+                    "r" : 231
+                  }
+                }, {
+                  "color" : {
+                    "a" : 1,
+                    "b" : 238,
+                    "g" : 231,
+                    "r" : 231
+                  }
+                } ],
+                "side_or_corner" : {
+                  "verticalSide" : "BOTTOM"
+                }
+              }
+            },
+            "number" : {
+              "card_number_color" : {
+                "color" : "#1c1d29",
+                "opacity" : 100
+              },
+              "card_number_size" : 40
+            }
+          },
+          "tagline" : {
+            "tag_line_divider" : true
+          }
+        },
+        tag_line="Business Statistics"
+      %}
+  {% module_attribute "rich_text" %}
+
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Card Four column Counter #}
+
+  {# START: Testimonial Slider #}
+  {% dnd_section
+  background_color="rgba(28, 29, 41, 1)",
+  padding={
+    "default" : {
+      "bottom" : "120px",
+      "top" : "50px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-testimonial",
+        offset=0,
+        width=12,
+        heading_text="",
+        styles={
+          "author" : {
+            "author_testimonial_name_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "author_testimonial_quote_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 64
+            },
+            "author_testimonial_title_color" : {
+              "color" : "#ff6a00",
+              "opacity" : 100
+            }
+          },
+          "carousel" : {
+            "navigation_type" : "arrows"
+          },
+          "heading" : {
+            "heading_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            }
+          },
+          "tagline" : {
+            "tag_line_divider" : true
+          }
+        },
+        tag_line="",
+        testimonial=[ {
+          "testimonial_image" : {
+            "alt" : "women-s-white-and-black-button-up-collared-shirt",
+            "height" : 64,
+            "loading" : "lazy",
+            "max_height" : 64,
+            "max_width" : 64,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/women-s-white-and-black-button-up-collared-shirt.jpg'),
+            "width" : 64
+          },
+          "testimonial_name" : "Person name",
+          "testimonial_text" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>",
+          "testimonial_title" : "Actress"
+        }, {
+          "testimonial_image" : {
+            "alt" : "women-s-white-and-black-button-up-collared-shirt",
+            "height" : 64,
+            "loading" : "lazy",
+            "max_height" : 64,
+            "max_width" : 64,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/women-s-white-and-black-button-up-collared-shirt.jpg'),
+            "width" : 64
+          },
+          "testimonial_name" : "Person name",
+          "testimonial_text" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>",
+          "testimonial_title" : "Founder"
+        }, {
+          "testimonial_image" : {
+            "alt" : "women-s-white-and-black-button-up-collared-shirt",
+            "height" : 64,
+            "loading" : "lazy",
+            "max_height" : 64,
+            "max_width" : 64,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/women-s-white-and-black-button-up-collared-shirt.jpg'),
+            "width" : 64
+          },
+          "testimonial_name" : "Person name",
+          "testimonial_text" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>",
+          "testimonial_title" : "Businesswoman"
+        } ]
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Testimonial Slider #}
+
+  {# START: Card Image four column #}
+  {% dnd_section
+  background_color="rgba(243, 243, 247, 1)"
+%}
+  {% dnd_module
+    path="../modules/th-card-3",
+    offset=0,
+    width=12,
+    button={
+      "button_icon" : {
+        "name" : ""
+      },
+      "button_text" : ""
+    },
+    card=[ {
+      "card_button" : {
+        "card_button_icon" : {
+          "name" : ""
+        },
+        "card_button_link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "",
+            "type" : "EXTERNAL"
+          }
+        },
+        "card_button_text" : "",
+        "card_button_type" : "simple",
+        "card_link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "https://www.hubsnacks.com/",
+            "type" : "EXTERNAL"
+          }
+        }
+      },
+      "card_icon" : [ ],
+      "card_image" : {
+        "height" : 467,
+        "loading" : "lazy",
+        "src" : get_asset_url('../images/positive-male-worker-with-detail-on-street.jpg'),
+        "width" : 640
+      },
+      "card_tagline" : "Service",
+      "card_text" : "",
+      "card_title" : "Basic"
+    }, {
+      "card_button" : {
+        "card_button_icon" : {
+          "name" : "Alternate Arrow Circle Right",
+          "type" : "SOLID",
+          "unicode" : "f35a"
+        },
+        "card_button_link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "",
+            "type" : "EXTERNAL"
+          }
+        },
+        "card_button_text" : "",
+        "card_button_type" : "simple",
+        "card_link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "https://www.hubsnacks.com/",
+            "type" : "EXTERNAL"
+          }
+        }
+      },
+      "card_icon" : [ ],
+      "card_image" : {
+        "height" : 467,
+        "loading" : "lazy",
+        "src" : get_asset_url('../images/positive-male-worker-with-detail-on-street.jpg'),
+        "width" : 640
+      },
+      "card_tagline" : "Service",
+      "card_text" : "",
+      "card_title" : "Standard"
+    }, {
+      "card_button" : {
+        "card_button_icon" : {
+          "name" : "Alternate Arrow Circle Right",
+          "type" : "SOLID",
+          "unicode" : "f35a"
+        },
+        "card_button_link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "",
+            "type" : "EXTERNAL"
+          }
+        },
+        "card_button_text" : "",
+        "card_button_type" : "simple",
+        "card_link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "https://www.hubsnacks.com/",
+            "type" : "EXTERNAL"
+          }
+        }
+      },
+      "card_icon" : [ ],
+      "card_image" : {
+        "height" : 467,
+        "loading" : "lazy",
+        "src" : get_asset_url('../images/positive-male-worker-with-detail-on-street.jpg'),
+        "width" : 640
+      },
+      "card_tagline" : "Service",
+      "card_text" : "",
+      "card_title" : "Premium"
+    }, {
+      "card_button" : {
+        "card_button_icon" : {
+          "name" : ""
+        },
+        "card_button_link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "",
+            "type" : "EXTERNAL"
+          }
+        },
+        "card_button_text" : "",
+        "card_button_type" : "simple",
+        "card_link" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "https://484997.hs-sites.com/thrifty/services",
+            "type" : "EXTERNAL"
+          }
+        }
+      },
+      "card_icon" : [ ],
+      "card_image" : {
+        "height" : 467,
+        "loading" : "lazy",
+        "max_height" : 467,
+        "max_width" : 640,
+        "size_type" : "auto",
+        "src" : get_asset_url('../images/positive-male-worker-with-detail-on-street.jpg'),
+        "width" : 640
+      },
+      "card_tagline" : "Service",
+      "card_text" : "",
+      "card_title" : "Ultimate"
+    } ],
+    heading_text="Our <strong>Services</strong>",
+    styles={
+      "button" : {
+        "button_outline" : true
+      },
+      "card" : {
+        "background" : {
+          "card_background_type" : "gradient",
+          "card_hover_background_color" : {
+            "color" : "#e7e7ee",
+            "opacity" : 100
+          }
+        },
+        "border" : {
+          "card_border" : {
+            "bottom" : {
+              "color" : "#f3f3f7",
+              "opacity" : 100,
+              "style" : "solid",
+              "width" : {
+                "units" : "px",
+                "value" : 1
+              }
+            },
+            "left" : {
+              "color" : "#f3f3f7",
+              "opacity" : 100,
+              "style" : "solid",
+              "width" : {
+                "units" : "px",
+                "value" : 1
+              }
+            },
+            "right" : {
+              "color" : "#f3f3f7",
+              "opacity" : 100,
+              "style" : "solid",
+              "width" : {
+                "units" : "px",
+                "value" : 1
+              }
+            },
+            "top" : {
+              "color" : "#f3f3f7",
+              "opacity" : 100,
+              "style" : "solid",
+              "width" : {
+                "units" : "px",
+                "value" : 1
+              }
+            }
+          }
+        },
+        "card_image" : { },
+        "card_spacing" : {
+          "enable_spacing" : true,
+          "spacing" : {
+            "padding" : {
+              "bottom" : {
+                "units" : "px",
+                "value" : 20
+              },
+              "left" : {
+                "units" : "px",
+                "value" : 20
+              },
+              "right" : {
+                "units" : "px",
+                "value" : 20
+              },
+              "top" : {
+                "units" : "px",
+                "value" : 20
+              }
+            }
+          }
+        },
+        "card_text" : {
+          "card_text_center" : true
+        },
+        "icon" : {
+          "card_icon_background_color" : {
+            "color" : "#ff6a00",
+            "opacity" : 100
+          },
+          "card_icon_color" : {
+            "color" : "#FFFFFF",
+            "opacity" : 100
+          }
+        },
+        "title" : {
+          "card_title_size" : 0
+        }
+      },
+      "enable_top_negative" : true,
+      "tagline" : {
+        "tag_line_divider" : true
+      }
+    },
+    tag_line=""
+  %}
+  {% module_attribute "rich_text" %}
+
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+  {# END: Card Image four column #}
+
+  {# START: Logo Slider #}
+  {% dnd_section
+  background_color="rgba(243, 243, 247, 1)"
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-logo-slider",
+        offset=0,
+        width=12,
+        button={
+          "button_text" : ""
+        },
+        heading_text="Lorem ipsum dolor sit amet",
+        logo=[ {
+          "boolean_field" : false,
+          "filter" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-1.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "boolean_field" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-2.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "boolean_field" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-3.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "boolean_field" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-4.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "boolean_field" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-5.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "filter" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-6.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "filter" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-1.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        } ],
+        styles={
+          "dots" : false,
+          "dots_color" : {
+            "color" : "#ff6a00",
+            "opacity" : 100
+          },
+          "heading" : {
+            "heading_font_size" : 40
+          },
+          "slide_background_color" : {
+            "color" : "#e7e7ee",
+            "opacity" : 100
+          },
+          "tagline" : {
+            "tag_line_divider" : true
+          }
+        },
+        tag_line="Our Customers"
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Logo Slider #}
+
+  {# START: Pricing #}
+  {% dnd_section %}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-pricing",
+        offset=0,
+        width=12,
+        button={
+          "button_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          },
+          "button_text" : ""
+        },
+        heading_text="<strong>Pricing</strong> Packages",
+        pricing=[ {
+          "pricing_button" : {
+            "pricing_button_icon" : {
+              "name" : ""
+            },
+            "pricing_button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubsnacks.com/",
+                "type" : "EXTERNAL"
+              }
+            },
+            "pricing_button_text" : "Buy Now",
+            "pricing_button_type" : "simple"
+          },
+          "pricing_currency" : "$",
+          "pricing_description" : "per month",
+          "pricing_features" : [ {
+            "pricing_features" : "Omnis ut quaerat facilis.",
+            "pricing_features_icon" : {
+              "name" : "Check Circle",
+              "type" : "REGULAR",
+              "unicode" : "f058"
+            }
+          }, {
+            "pricing_features" : "Qui nesciunt itaque asper",
+            "pricing_features_icon" : {
+              "name" : "Check Circle",
+              "type" : "REGULAR",
+              "unicode" : "f058"
+            }
+          }, {
+            "pricing_features" : "Eveniet ea beatae",
+            "pricing_features_icon" : {
+              "name" : "Check Circle",
+              "type" : "REGULAR",
+              "unicode" : "f058"
+            }
+          }, {
+            "pricing_features" : "Omnis doloribus incid",
+            "pricing_features_icon" : {
+              "name" : "Check Circle",
+              "type" : "REGULAR",
+              "unicode" : "f058"
+            }
+          }, {
+            "pricing_features" : "Debitis incidunt nihil",
+            "pricing_features_icon" : {
+              "name" : "Check Circle",
+              "type" : "REGULAR",
+              "unicode" : "f058"
+            }
+          } ],
+          "pricing_highlight" : {
+            "pricing_highlight_show_hide" : true
+          },
+          "pricing_name" : "Standard",
+          "pricing_number" : "199.00",
+          "pricing_popular" : {
+            "badge_text" : "",
+            "enable_badge" : false
+          },
+          "pricing_recommended" : {
+            "pricing_recommended_color" : { },
+            "pricing_recommended_show_hide" : false,
+            "pricing_recommended_text" : "RECOMMENDED"
+          },
+          "pricing_text" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+        }, {
+          "pricing_button" : {
+            "pricing_button_icon" : {
+              "name" : ""
+            },
+            "pricing_button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubsnacks.com/",
+                "type" : "EXTERNAL"
+              }
+            },
+            "pricing_button_text" : "Buy Now",
+            "pricing_button_type" : "simple"
+          },
+          "pricing_currency" : "$",
+          "pricing_description" : "per month",
+          "pricing_features" : [ {
+            "pricing_features" : "Omnis ut quaerat facilis.",
+            "pricing_features_icon" : {
+              "name" : "Check Circle",
+              "type" : "REGULAR",
+              "unicode" : "f058"
+            }
+          }, {
+            "pricing_features" : "Qui nesciunt itaque asper",
+            "pricing_features_icon" : {
+              "name" : "Check Circle",
+              "type" : "REGULAR",
+              "unicode" : "f058"
+            }
+          }, {
+            "pricing_features" : "Eveniet ea beatae",
+            "pricing_features_icon" : {
+              "name" : "Check Circle",
+              "type" : "REGULAR",
+              "unicode" : "f058"
+            }
+          }, {
+            "pricing_features" : "Omnis doloribus incid",
+            "pricing_features_icon" : {
+              "name" : "Check Circle",
+              "type" : "REGULAR",
+              "unicode" : "f058"
+            }
+          }, {
+            "pricing_features" : "Debitis incidunt nihil",
+            "pricing_features_icon" : {
+              "name" : "Check Circle",
+              "type" : "REGULAR",
+              "unicode" : "f058"
+            }
+          } ],
+          "pricing_name" : "Premium",
+          "pricing_number" : "299.00",
+          "pricing_popular" : {
+            "badge_text" : "Popular",
+            "enable_badge" : true
+          },
+          "pricing_recommended" : {
+            "pricing_recommended_color" : { },
+            "pricing_recommended_show_hide" : true,
+            "pricing_recommended_text" : "RECOMMENDED"
+          },
+          "pricing_text" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+        }, {
+          "pricing_button" : {
+            "pricing_button_icon" : {
+              "name" : ""
+            },
+            "pricing_button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://www.hubsnacks.com/",
+                "type" : "EXTERNAL"
+              }
+            },
+            "pricing_button_text" : "Buy Now",
+            "pricing_button_type" : "simple"
+          },
+          "pricing_currency" : "$",
+          "pricing_description" : "per month",
+          "pricing_features" : [ {
+            "pricing_features" : "Omnis ut quaerat facilis.",
+            "pricing_features_icon" : {
+              "name" : "Check Circle",
+              "type" : "REGULAR",
+              "unicode" : "f058"
+            }
+          }, {
+            "pricing_features" : "Qui nesciunt itaque asper",
+            "pricing_features_icon" : {
+              "name" : "Check Circle",
+              "type" : "REGULAR",
+              "unicode" : "f058"
+            }
+          }, {
+            "pricing_features" : "Eveniet ea beatae",
+            "pricing_features_icon" : {
+              "name" : "Check Circle",
+              "type" : "REGULAR",
+              "unicode" : "f058"
+            }
+          }, {
+            "pricing_features" : "Omnis doloribus incid",
+            "pricing_features_icon" : {
+              "name" : "Check Circle",
+              "type" : "REGULAR",
+              "unicode" : "f058"
+            }
+          }, {
+            "pricing_features" : "Debitis incidunt nihil",
+            "pricing_features_icon" : {
+              "name" : "Check Circle",
+              "type" : "REGULAR",
+              "unicode" : "f058"
+            }
+          } ],
+          "pricing_name" : "Ultimate",
+          "pricing_number" : "399.00",
+          "pricing_popular" : {
+            "badge_text" : "",
+            "enable_badge" : false
+          },
+          "pricing_recommended" : {
+            "pricing_recommended_color" : { },
+            "pricing_recommended_show_hide" : true,
+            "pricing_recommended_text" : "RECOMMENDED"
+          },
+          "pricing_text" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+        } ],
+        styles={
+          "pricing" : {
+            "border" : {
+              "pricing_card_border" : {
+                "bottom" : {
+                  "color" : "#ff7a59",
+                  "opacity" : 100,
+                  "style" : "solid",
+                  "width" : {
+                    "units" : "px",
+                    "value" : 1
+                  }
+                },
+                "left" : {
+                  "color" : "#ff7a59",
+                  "opacity" : 100,
+                  "style" : "solid",
+                  "width" : {
+                    "units" : "px",
+                    "value" : 1
+                  }
+                },
+                "right" : {
+                  "color" : "#ff7a59",
+                  "opacity" : 100,
+                  "style" : "solid",
+                  "width" : {
+                    "units" : "px",
+                    "value" : 1
+                  }
+                },
+                "top" : {
+                  "color" : "#ff7a59",
+                  "opacity" : 100,
+                  "style" : "solid",
+                  "width" : {
+                    "units" : "px",
+                    "value" : 1
+                  }
+                }
+              }
+            },
+            "button" : {
+              "pricing_card_button_fullwidth" : true
+            },
+            "card_alignment" : {
+              "pricing_card_text_center" : true
+            },
+            "card_colors" : {
+              "pricing_features_color" : {
+                "color" : "#1c1d29",
+                "opacity" : 64
+              }
+            }
+          }
+        },
+        tag_line="Online Packs"
+      %}
+  {% module_attribute "rich_text" %}
+
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Pricing #}
+
+  {# Start: Two Column CTA #}
+  {% dnd_section
+  background_color="rgba(28, 29, 41, 1)"
+  %}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-cta-1",
+        offset=0,
+        width=12,
+        description_content={
+          "content" : "<h3>Try our freemium theme</h3><p>With advanced features of higher quality than other similar marketplace themes</p>",
+          "button": {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://484997.hs-sites.com/thrifty/book-meeting",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "GET STARTED"
+          }
+        },
+        heading_text="Choose the Best",
+        styles={
+          "heading_color" : {
+            "color" : "#FFFFFF",
+            "opacity" : 100
+          },
+          "tag_line_color" : {
+            "color" : "#FFFFFF",
+            "opacity" : 100
+          },
+          "tag_line_divider" : false
+        },
+        tag_line="Why not"
+      %}
+  {% module_attribute "rich_text" %}
+  <p><span style="color: #ffffff;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Two Column CTA #}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

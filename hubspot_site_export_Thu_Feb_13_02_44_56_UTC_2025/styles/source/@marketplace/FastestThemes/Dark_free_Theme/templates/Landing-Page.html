@@ -1,0 +1,186 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Landing page
+  screenshotPath: ../images/template-previews/dark-free-theme-landing.png
+-->
+{% extends './layouts/base.html' %}
+{% block header %}
+  {% global_partial path='./partials/header-no-navigation.html' %}
+{% endblock header %}
+{% block body %}
+<main class="body-container-wrapper">
+  {% dnd_area "dnd_arealanding" class='body-container', label='Main section' %}
+	
+		{% dnd_section 
+		  padding={
+				'top': 0,
+				'bottom': 0,
+				'left': 0,
+				'right': 0
+			},
+			full_width=true
+		%}
+   {% dnd_module 'Contact Form Text' 
+				path='./../modules/Contact Form Text.module',
+				label="Contact form with text",
+				width=12
+			%}
+		 {% end_dnd_module %}
+		{% end_dnd_section %}
+  {% dnd_section 
+		  padding={
+				'top': 0,
+				'bottom': 0,
+				'left': 0,
+				'right': 0
+			},
+			full_width=true
+		%}
+   {% dnd_module 'Video Section' 
+				path='./../modules/Video Section.module',
+				label="Video Section",
+				width=12
+			%}
+		 {% end_dnd_module %}
+		{% end_dnd_section %}
+  {% dnd_section 
+		  padding={
+				'top': 0,
+				'bottom': 0,
+				'left': 0,
+				'right': 0
+			}, background_color={
+  'r':1,
+  'g':1,
+  'b':1,
+  'a':1
+  },
+		full_width=true
+		%}
+   {% dnd_module 'Logo Slider' 
+				path='./../modules/Logo Slider.module',
+				label="Logo Slider",
+				width=12
+			%}
+		 {% end_dnd_module %}
+		{% end_dnd_section %}
+
+{# FAQs section #}
+
+
+{% dnd_section 
+		  padding={
+				'bottom': 0,
+				'left': 0,
+				'right': 0
+			},
+      background_color={
+        r: 23,
+        g: 24,
+        b: 31,
+        a: 1
+      },
+			width=12
+		%}
+   {% dnd_module 'Heading Section' 
+				path='./../modules/Heading Section.module',
+				label="Heading-section",
+				width=12
+			%}
+		 {% end_dnd_module %}
+		{% end_dnd_section %}
+  {% dnd_section
+   padding={
+				'top': 50,
+				'bottom': 5,
+				'left': 10,
+				'right': 10
+			},background_color={
+        r: 23,
+        g: 24,
+        b: 31,
+        a: 1
+      },
+          width=12,
+      vertical_alignment='TOP'
+    %}
+  {% dnd_module 'FAQ Column' 
+     path='./../modules/FAQ Column.module', 
+     label="FAQ Column", 
+     offset=0,
+     width=4 %} 
+  {% end_dnd_module %}
+  {% dnd_module 'FAQ Column' 
+     path='./../modules/FAQ Column.module', 
+     label="FAQ Column", 
+     offset=4,
+     width=4 %} 
+  {% end_dnd_module %}
+  {% dnd_module 'FAQ Column' 
+     path='./../modules/FAQ Column.module', 
+     label="FAQ Column", 
+     offset=8,
+     width=4 %} 
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+     {% dnd_section
+   padding={
+				'top': 5,
+				'bottom': 50,
+				'left': 10,
+				'right': 10
+			},background_color={
+        r: 23,
+        g: 24,
+        b: 31,
+        a: 1
+      },
+          width=12,
+      vertical_alignment='TOP'
+    %}
+  {% dnd_module 'FAQ Column' 
+     path='./../modules/FAQ Column.module', 
+     label="FAQ Column", 
+     offset=0,
+     width=4 %} 
+  {% end_dnd_module %}
+  {% dnd_module 'FAQ Column' 
+     path='./../modules/FAQ Column.module', 
+     label="FAQ Column", 
+     offset=4,
+     width=4 %} 
+  {% end_dnd_module %}
+  {% dnd_module 'FAQ Column' 
+     path='./../modules/FAQ Column.module', 
+     label="FAQ Column", 
+     offset=8,
+     width=4 %} 
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+
+{# End FAQs section #}
+    {% dnd_section 
+		  padding={
+				'top': 0,
+				'bottom': 0,
+				'left': 0,
+				'right': 0
+			}, background_color={
+  'r':1,
+  'g':1,
+  'b':1,
+  'a':1
+  },
+			full_width=true
+		%}
+   {% dnd_module 'Hero Section' 
+				path='./../modules/Hero Section.module',
+				label="Hero Section",
+				width=12
+			%}
+			{% end_dnd_module %}
+		{% end_dnd_section %}
+    {% end_dnd_area %}
+</main>
+{% endblock body %}

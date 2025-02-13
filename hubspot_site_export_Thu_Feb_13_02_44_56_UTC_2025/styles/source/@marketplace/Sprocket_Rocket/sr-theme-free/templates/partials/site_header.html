@@ -1,0 +1,11 @@
+<!--
+templateType: global_partial
+isAvailableForNewContent: false
+label: Global Site Header
+version: 2
+-->
+{% dnd_area "site_header" label="Modules here will appear on the top of every page" %}
+    {% dnd_section %}
+        {% dnd_module overrideable=True, path='../../custom-modules/SR Navigation 01', widget_name='SR Navigation 01', label='SR Navigation 01' %}{% end_dnd_module %}
+    {% end_dnd_section %}
+{% end_dnd_area %}

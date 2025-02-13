@@ -1,0 +1,212 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Landing Page 01
+screenshotPath: ../images/Landing.png
+version: 2
+-->
+
+	{% include './header.html' %}
+
+	<body class="{% block body_class %}{% text 'body_class' label='Body Class' no_wrapper=True %}{% endblock %}">
+
+		{% block header %}
+			{% boolean "enabled_site_header" label='Enable Global Site Header', value=true, export_to_template_context=True %}
+			{% if widget_data.enabled_site_header.value %}
+				{% global_partial path="../templates/partials/site_header.html" %}
+			{% endif %}
+		{% endblock header %}
+
+		{% block body %}
+
+			{% dnd_area "body_dnd_area" label="Main content" %}        		
+				{% dnd_section %}
+					{% dnd_module path='../custom-modules/SR Hero Form 01' overrideable=True, widget_name='SR Hero Form 01', label='SR Hero Form 01' %}{% end_dnd_module %}
+				{% end_dnd_section %}
+
+        		{% dnd_section %}
+					{% dnd_module path='../custom-modules/SR Clients Carousel 01' overrideable=True, widget_name='SR Clients Carousel 01', label='SR Clients Carousel 01' %}{% end_dnd_module %}
+				{% end_dnd_section %}
+
+				{% dnd_section %}
+				  {% dnd_column
+					offset=0,
+					width=12
+				  %}
+					{% dnd_row %}
+					  {% dnd_module
+					  	design_settings={
+						  "container_width" : "max",
+						  "layout" : "container",
+						},
+						path="../custom-modules/SR One Col 01",
+						offset=0,
+						width=12,
+						column=[ {
+						  "add_to_lightbox" : false,
+						  "col_content" : "",
+						  "col_image" : {
+							"alt" : "left (1)-1",
+							"height" : 540,
+							"loading" : "lazy",
+							"max_height" : 1080,
+							"max_width" : 1204,
+							"src" : "https://www.lean-labs.com/hubfs/left%20(1)-1.png",
+							"width" : 602
+						  },
+						  "col_media_type" : "image",
+						  "col_overlay_color" : {
+							"color" : "#000000",
+							"opacity" : 50
+						  },
+						  "col_text_align" : "auto",
+						  "column_size" : [ {
+							"column_breakpoint" : "md",
+							"column_offset" : "0",
+							"column_width" : "12"
+						  } ],
+						  "custom_column_size" : false,
+						  "image_link" : {
+							"no_follow" : false,
+							"open_in_new_tab" : false,
+							"url" : {
+							  "type" : "EXTERNAL"
+							}
+						  },
+						  "lead_text" : false,
+						  "text_color" : "auto",
+						  "video" : {
+							"autoplay" : true,
+							"background_video_design" : "none",
+							"custom_accent_color" : {
+							  "color" : "#000000",
+							  "opacity" : 20
+							},
+							"embed_field" : {
+							  "source_type" : "oembed"
+							},
+							"html_video" : [ "https://www.lean-labs.com/hubfs/sr-assets/videos/sr-demo.mp4" ],
+							"loop" : true,
+							"muted" : true,
+							"oembed_thumbnail" : {
+							  "loading" : "disabled",
+							  "src" : ""
+							},
+							"placeholder_fields" : {
+							  "placeholder_description" : "Select a video type in the sidebar.",
+							  "placeholder_title" : "No video selected"
+							},
+							"show_controls" : true,
+							"style_options" : {
+							  "oembed_thumbnail_play_button_color" : {
+								"color" : "#ffffff"
+							  }
+							},
+							"video_accent_color" : "primary",
+							"video_poster" : {
+							  "alt" : "Sprocket Rocket Demo",
+							  "size_type" : "exact",
+							  "src" : "https://f.hubspotusercontent20.net/hubfs/275827/sr-assets/videos/sr-demo-poster.jpg"
+							},
+							"video_type" : "html_video"
+						  }
+						}, {
+						  "add_to_lightbox" : false,
+						  "col_content" : "<p>Whether you build your own landing page layout or use one of our included landing page templates, you can launch your page and start gathering performance data quickly with Sprocket Rocket.</p>",
+						  "col_media_type" : "none",
+						  "col_overlay_color" : {
+							"color" : "#000000",
+							"opacity" : 50
+						  },
+						  "col_text_align" : "auto",
+						  "column_size" : [ {
+							"column_breakpoint" : "md",
+							"column_offset" : "1",
+							"column_width" : "5"
+						  } ],
+						  "ctas" : [ ],
+						  "custom_column_size" : true,
+						  "heading" : [ {
+							"heading" : "Build and launch landing pages in a matter of minutes.",
+							"heading_align" : "auto",
+							"heading_color" : "auto",
+							"heading_color_custom" : {
+							  "color" : "#30343b",
+							  "opacity" : 100
+							},
+							"heading_display_size" : "auto",
+							"heading_size" : "h1"
+						  } ],
+						  "image_link" : {
+							"no_follow" : false,
+							"open_in_new_tab" : false,
+							"url" : {
+							  "type" : "EXTERNAL"
+							}
+						  },
+						  "lead_text" : false,
+						  "text_color" : "auto",
+						  "video" : {
+							"autoplay" : true,
+							"background_video_design" : "none",
+							"custom_accent_color" : {
+							  "color" : "#000000",
+							  "opacity" : 20
+							},
+							"embed_field" : {
+							  "source_type" : "oembed"
+							},
+							"html_video" : [ "https://www.lean-labs.com/hubfs/sr-assets/videos/sr-demo.mp4" ],
+							"loop" : true,
+							"muted" : true,
+							"oembed_thumbnail" : {
+							  "loading" : "disabled",
+							  "src" : ""
+							},
+							"placeholder_fields" : {
+							  "placeholder_description" : "Select a video type in the sidebar.",
+							  "placeholder_title" : "No video selected"
+							},
+							"show_controls" : true,
+							"style_options" : {
+							  "oembed_thumbnail_play_button_color" : {
+								"color" : "#ffffff"
+							  }
+							},
+							"video_accent_color" : "primary",
+							"video_poster" : {
+							  "alt" : "Sprocket Rocket Demo",
+							  "size_type" : "exact",
+							  "src" : "https://f.hubspotusercontent20.net/hubfs/275827/sr-assets/videos/sr-demo-poster.jpg"
+							},
+							"video_type" : "html_video"
+						  }
+						} ]
+					  %}
+					  {% end_dnd_module %}
+					{% end_dnd_row %}
+				  {% end_dnd_column %}
+				{% end_dnd_section %}
+
+				{% dnd_section %}
+					{% dnd_module path='../custom-modules/SR Cards Testimonial Slider 01' overrideable=True, widget_name='SR Cards Testimonial Slider 01', label='SR Cards Testimonial Slider 01' %}{% end_dnd_module %}
+				{% end_dnd_section %}
+		
+				{% dnd_section %}
+					{% dnd_module path='../custom-modules/SR Footer Min 01' overrideable=True, widget_name='SR Footer Min 01', label='SR Footer Min 01' %}{% end_dnd_module %}
+				{% end_dnd_section %}
+
+			{% end_dnd_area %}
+
+		{% endblock body %}
+
+		{% block footer %}
+			{% boolean "enabled_site_footer" label='Enable Global Site Footer', value=false, export_to_template_context=True %}
+			{% if widget_data.enabled_site_footer.value %}
+				{% global_partial path="../templates/partials/site_footer.html" %}
+			{% endif %}
+		{% endblock footer %}
+
+		{% include './footer-includes.html' %}
+	</body>
+</html>

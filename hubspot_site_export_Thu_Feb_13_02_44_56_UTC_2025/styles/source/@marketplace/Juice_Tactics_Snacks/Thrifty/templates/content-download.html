@@ -1,0 +1,272 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Content Download Landing Page
+screenshotPath: ../images/template-previews/content-download.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block header %}
+{% global_partial path='./partials/header-no-navigation.html' %}
+{% endblock header %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper">
+  {% dnd_area 'dnd_area' class='body-container body-container--content-download-landing-page', label='Main section' %}
+
+  {# START: Hero Single Column #}
+  {% dnd_section
+  background_image={
+    "background_position" : "MIDDLE_CENTER",
+    "background_size" : "cover",
+    "image_url" : get_asset_url('../images/hero-background-image.jpg')
+  },
+  padding={
+    "default" : {
+      "bottom" : "180px",
+      "top" : "100px"
+    },
+    "mobile" : {
+      "bottom" : "100px",
+      "top" : "70px"
+    }
+  },
+  margin={
+    "mobile" : {
+      "bottom" : "40px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-hero-2",
+        offset=0,
+        width=12,
+        button_1={
+          "button_text" : ""
+        },
+        button_2={
+          "button_text" : ""
+        },
+        heading_text="Content <strong>Download</strong>",
+        styles={
+          "button_1" : {
+            "button_background_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "button_border_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "button_text_color" : {
+              "color" : "#ff9a52",
+              "opacity" : 100
+            }
+          },
+          "heading" : {
+            "heading_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "heading_font_size" : 60
+          }
+        },
+        tag_line="Landing page"
+      %}
+  {% module_attribute "rich_text" %}
+
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %} 
+  {# END: Hero Single Column #}
+
+  {# START: Form Two Column#}
+  {% dnd_section %}
+  {% dnd_module path='../modules/th-form',
+    styles={
+           "content_type": "right-form",
+           "form_border":{
+              "border_radius": { "value": 0, "units": "px" }
+           }
+        }
+    %}
+  {% end_dnd_module %} 
+  {% end_dnd_section %}
+  {# END: Form #}
+
+  {# START: Logo #}
+  {% dnd_section %}
+  {% dnd_module path='../modules/th-logo-slider' %}
+  {% end_dnd_module %} 
+  {% end_dnd_section %}
+  {# END: Logo #}
+
+  {# START: Card Four Column #}
+  {% dnd_section %}
+  {% dnd_module path='../modules/th-card-2',
+       tag_line="Services",
+       rich_text='',
+       card=[
+        {
+         "card_number":"",
+         "card_icon":{
+            "name": "Alternate File",
+            "unicode": "f15c",
+            "type": "REGULAR"
+         },
+         "card_title":"Lorem ipsum",
+         "card_text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        },
+        {
+         "card_number":"",
+         "card_icon":{
+            "name": "Desktop",
+            "unicode": "f108",
+            "type": "SOLID"
+         },
+         "card_title":"Lorem ipsum",
+         "card_text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        },
+        {
+         "card_number":"",
+         "card_icon":{
+            "name": "Alternate Mobile",
+            "unicode": "f3cd",
+            "type": "SOLID"
+         },
+         "card_title":"Lorem ipsum",
+         "card_text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        },
+        {
+         "card_number":"",
+         "card_icon":{
+            "name": "Alternate File",
+            "unicode": "f15c",
+            "type": "REGULAR"
+         },
+         "card_title":"Lorem ipsum",
+         "card_text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        }
+      ],
+      button={
+        "button_text": ""
+      },
+      styles={
+        "card_title_size": "",
+        "card_background_type":"gradient",
+        "card_border":{
+          "top":
+            {
+                "width":
+                {
+                    "value": 1,
+                    "units": "px"
+                },
+                "opacity": 100,
+                "style": "solid",
+                "color": "#dae5ec"
+            },
+            "bottom":
+            {
+                "width":
+                {
+                    "value": 1,
+                    "units": "px"
+                },
+                "opacity": 100,
+                "style": "solid",
+                "color": "#dae5ec"
+            },
+            "left":
+            {
+                "width":
+                {
+                    "value": 1,
+                    "units": "px"
+                },
+                "opacity": 100,
+                "style": "solid",
+                "color": "#dae5ec"
+            },
+            "right":
+            {
+                "width":
+                {
+                    "value": 1,
+                    "units": "px"
+                },
+                "opacity": 100,
+                "style": "solid",
+                "color": "#dae5ec"
+            }
+        }
+      }
+    %}
+  {% end_dnd_module %} 
+  {% end_dnd_section %}
+  {# END: Card Four Column #}
+
+  {# START: Two Column Content 1 #}
+  {% dnd_section %}
+  {% dnd_module path='../modules/th-two-column-content-1',
+    image={
+            'alt': 'About Image 1',
+            'loading': 'lazy',
+            'src': get_asset_url("../images/about-image-1.jpg")
+      }
+    %}
+  {% end_dnd_module %} 
+  {% end_dnd_section %}
+  {# END: Two Column Content 1 #} 
+
+  {# START: Testimonial #}
+  {% dnd_section %}
+  {% dnd_module path='../modules/th-testimonial',
+       testimonial=[
+        {
+         "testimonial_text":'<p style="font-size: 20px;">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."</p>',
+         "testimonial_image": {
+          "src": get_asset_url("../images/women-s-white-and-black-button-up-collared-shirt.jpg")
+         },
+         "testimonial_name": "John Doe - Techslow",
+         "testimonial_title": "Founder"
+        }
+       ],
+       styles={
+           "heading_type": "<h2>",
+        }
+    %}
+  {% end_dnd_module %} 
+  {% end_dnd_section %}
+  {# END: Testimonial #}
+
+  {# START: CTA 1 #}
+  {% dnd_section %}
+  {% dnd_module path='../modules/th-cta-1',
+       styles={
+          "heading_color":{
+              "color":"",
+              "opacity":100
+           },
+           "heading_type": "<h2>"
+        }
+    %}
+  {% end_dnd_module %} 
+  {% end_dnd_section %}
+  {# END: CTA 1 #}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}
+
+{% block footer %}
+{% global_partial path='./partials/footer-no-navigation.html' %}
+{% endblock footer %}

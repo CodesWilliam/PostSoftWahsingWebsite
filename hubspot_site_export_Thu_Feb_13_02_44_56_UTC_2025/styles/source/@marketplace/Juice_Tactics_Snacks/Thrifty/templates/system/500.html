@@ -1,0 +1,21 @@
+<!--
+templateType: error_page
+isAvailableForNewContent: true
+label: 500 error
+screenshotPath: ../../images/template-previews/500.png
+-->
+{% set template_css = '../../css/templates/system.css' %}
+{% extends '../layouts/base.html' %}
+
+{# pageTitle is used on system templates for setting a value for the title tag #}
+{% set pageTitle = "500 - internal server error" %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper">
+  {% if theme.spacing.enable_boxed_container == "true" %}<div class="container-fluid body-container body-container--system"><div class="dnd-section dnd-section-system">{% endif %}
+  {# Systems 500 Hero #}
+  {% module "th_systems_500_hero" path='../../modules/th-systems-500-hero', label="Systems 500 Hero" %}
+  {% if theme.spacing.enable_boxed_container == "true" %}</div></div>{% endif %}
+</main>
+{% endblock body %}

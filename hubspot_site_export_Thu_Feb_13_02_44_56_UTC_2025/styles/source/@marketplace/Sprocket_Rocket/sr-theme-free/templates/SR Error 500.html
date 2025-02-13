@@ -1,0 +1,64 @@
+<!--
+templateType: error_page
+isAvailableForNewContent: true
+label: SR Error 500
+version: 2
+-->
+	{% include './header.html' %}
+
+	<body class="{% block body_class %}{% text 'body_class' label="Body Class" no_wrapper=True %}{% endblock %}">
+
+	{% block header %}
+		{% boolean "enabled_site_header" label='Enable Global Site Header', value=true, export_to_template_context=True %}
+		{% if widget_data.enabled_site_header.value %}
+			{% global_partial path="../templates/partials/site_header.html" %}
+		{% endif %}
+	{% endblock header %}
+
+	{% block body %}
+		{% require_css %}
+		<style>
+			.error-page {
+				padding: 10rem 0;
+				position: relative;
+				z-index: 1;
+			}
+			.error-page:before {
+				color: #f3f6f9;
+				content: attr(data-error);
+				font-size: 40vw;
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				transform: translate(-50%,-50%);
+				width: 100%;
+				z-index: -1;
+			}
+			@media screen and (min-width: 1100px) {
+				.error-page:before {
+					font-size: 20rem;
+				}
+			}
+		</style>
+		{% end_require_css %}
+		<div class="error-page text-center" data-error="500">
+			{% module 'content'
+				path='@hubspot/rich_text',
+				html='<h1>Something isn\'t quite right</h1><p>Sorry, an internal server error occurred. But have no fear, we\'re on the case!</p>'
+			%}
+			<div class="btn-wrapper btn-primary-wrapper btn-wrapper-sm">
+				<a class="cta_button" href="/">Return Home</a>
+			</div>
+		</div>
+	{% endblock body %}
+
+	{% block footer %}
+		{% boolean "enabled_site_footer" label='Enable Global Site Footer', value=true, export_to_template_context=True %}
+		{% if widget_data.enabled_site_footer.value %}
+			{% global_partial path="../templates/partials/site_footer.html" %}
+		{% endif %}
+	{% endblock footer %}
+
+	{% include './footer-includes.html' %}
+	</body>
+</html>

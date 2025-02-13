@@ -1,0 +1,22 @@
+<!--
+  templateType: global_partial
+  label: Header no navigation
+-->
+{% dnd_area 'header_dnd_top'
+    label='Top header',
+    class='header__dnd--top'
+  %}
+  {% end_dnd_area %}
+<header class="header header--no-navigation">
+  <div class="header__container content-wrapper">
+    <div class="header__logo">
+       {% module 'site_logo' path='@hubspot/logo', label='Header Logo', img={src=" {{ get_asset_url('../../images/Dark-logo-small.png') }}", width=200, override_inherited_src=true, alt='Dark Theme'}  %}
+     </div>
+  </div>
+</header>
+
+{% dnd_area 'header_dnd_bottom'
+    label='Bottom header',
+    class='header__dnd--bottom'
+  %}
+  {% end_dnd_area %}

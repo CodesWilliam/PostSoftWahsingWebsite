@@ -1,0 +1,51 @@
+
+<!--
+  templateType: section
+  label: Background Image Content
+  isAvailableForNewContent: true
+  screenshotPath: ../images/cta-strip.png
+  description: "Background Image Content"
+-->
+{% dnd_section
+background_image={
+   'backgroundPosition': 'MIDDLE_CENTER',
+   'backgroundSize': 'cover',
+   'imageUrl': context.backgroundImage || get_asset_url('../images/dark-cta.jpg')
+ } 
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="./../modules/Heading Section",
+        offset=0,
+        width=12,
+        enable_border_=false,
+        heading_text="Why You Should Upgrade to DARK Premium Theme?"
+      %}
+        {% module_attribute "description_text" %}
+          <div>You can test your new HubSpot website with our free theme but to unlock complete features and skyrocket your revenue, we recommend upgrade to DARK Premium theme.</div>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="./../modules/Customizable Button",
+        offset=0,
+        width=12,
+        button_text="Upgrade Now",
+        link={
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "https://app.hubspot.com/l/ecosystem/marketplace/assets/themes/dark-business-by-fastestthemes",
+            "type" : "EXTERNAL"
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

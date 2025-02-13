@@ -1,0 +1,58 @@
+<!--
+templateType: blog_post
+isAvailableForNewContent: true
+label: Single Blog Post
+screenshotPath: ../images/template-previews/blog-post.png
+-->
+{% set template_css = '../../css/templates/blog.css' %}
+
+{% extends './layouts/base.html' %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper">
+  <div class="body-container body-container--blog-post">
+
+    {# Blog Post Hero #}
+    {% module "th_blog_post_hero" path="../modules/th-blog-post-hero", label="Blog Post Hero" %}
+    {# End Blog Post Hero #}
+    
+    {# Blog Post Body #}
+    <div class="content-wrapper">
+      <article class="blog-post">
+        <div class="blog-post__body">
+          {{ content.post_body }}
+        </div>
+      </article>
+
+      {% if group.allow_comments %}
+      <div class="blog-comments">
+        {% module 'blog_comments'
+            path='@hubspot/blog_comments',
+            label="Blog comments"
+          %}
+      </div>
+      {% endif %}
+    </div>
+    {# End Blog Post Body  #}
+
+    {# Blog post related posts #}
+    {% module "th_blog_post_related_posts" path='../modules/th-blog-post-related-posts',
+    styles={
+            "content_text_center": true,
+            "blog_card_border":{
+              "border_radius": { "value": 0, "units": "px" }
+           }
+        },
+    label="Blog Post Related Posts" 
+    %}
+
+    {# Blog Post CTA #}
+    {% module "th_blog_post_cta" path='../modules/th-blog-post-cta', label="Blog Post CTA" %}
+
+    {# Blog Post Subscribe Form #}
+    {% module "th_blog_post_subscribe" path='../modules/th-blog-post-subscribe-form', label="Blog Post Subscribe Form" %}
+
+  </div>
+</main>
+{% endblock body %}

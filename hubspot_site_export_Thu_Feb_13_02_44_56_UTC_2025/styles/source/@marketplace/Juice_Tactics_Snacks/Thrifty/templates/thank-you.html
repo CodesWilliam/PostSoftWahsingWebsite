@@ -1,0 +1,156 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Thank You Page
+screenshotPath: ../images/template-previews/thank-you.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper">
+  {% dnd_area 'dnd_area' class='body-container body-container--thank-you-page', label='Main section' %}
+
+
+  {# START: Hero Single Column #}
+  {% dnd_section
+  background_image={
+    "background_position" : "MIDDLE_CENTER",
+    "background_size" : "cover",
+    "image_url" : get_asset_url('../images/hero-background-image.jpg')
+  },
+  padding={
+    "default" : {
+      "bottom" : "100px"
+    },
+    "mobile" : {
+      "bottom" : "70px",
+      "top" : "100px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-hero-2",
+        offset=0,
+        width=12,
+        button_1={
+          "button_text" : ""
+        },
+        button_2={
+          "button_text" : ""
+        },
+        heading_text="Thank your for <strong>your interest!</strong>",
+        styles={
+          "button_1" : {
+            "button_background_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "button_border_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "button_text_color" : {
+              "color" : "#ff9a52",
+              "opacity" : 100
+            }
+          },
+          "heading" : {
+            "heading_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "heading_font_size" : 60
+          }
+        },
+        tag_line="Success"
+      %}
+      {% module_attribute "rich_text" %}
+        <p><span style="color: #ffffff; font-size: 18px;">Problems downloading? <a href="#">Try again</a>.</span></p>
+      {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %} 
+  {# END: Hero Single Column #}
+  
+  {# Start: Hero Two Column #}
+  {% dnd_section
+  background_color="rgba(243, 243, 247, 1)" %}  
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-hero-1",
+        offset=0,
+        width=12,
+        button_1={
+          "button_icon" : {
+            "name" : "Alternate Long Arrow Right",
+            "type" : "SOLID",
+            "unicode" : "f30b"
+          },
+          "button_text" : "View Book"
+        },
+        button_2={
+          "button_icon" : {
+            "name" : "Alternate Cloud Download",
+            "type" : "SOLID",
+            "unicode" : "f217"
+          },
+          "button_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "https://www.hubsnacks.com/",
+              "type" : "EXTERNAL"
+            }
+          },
+          "button_text" : "Download Now"
+        },
+        heading_text="You may signup for <strong>other book</strong>",
+        image={
+          "alt" : "people-4",
+          "height" : 853,
+          "loading" : "lazy",
+          "max_height" : 853,
+          "max_width" : 1280,
+          "size_type" : "auto",
+          "src" : get_asset_url('../images/glasses-edu.jpg'),
+          "width" : 1280
+        },
+        styles={
+          "button_2" : {
+            "button_outline" : true
+          },
+          "content_text_center" : false,
+          "enable_top_negative" : true,
+          "heading" : {
+            "heading_font_size" : 40,
+            "heading_type" : "<h2>"
+          },
+          "tagline" : {
+            "tag_line_divider" : true
+          }
+        },
+        tag_line="Interested in the next offer?"
+      %}
+  {% module_attribute "rich_text" %}
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Hero Two Column #}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

@@ -1,0 +1,25 @@
+<!--
+  templateType: global_partial
+  label: Website header
+-->
+
+{% dnd_area 'header_dnd_top'
+    label='Top header',
+    class='header__dnd--top'
+  %}
+  {% end_dnd_area %}
+
+<header class="thunder-header-wrapper">
+{% module "header" path="../../modules/Website Header", label="Website Header" %}
+
+</header>
+
+
+{% dnd_area 'header_dnd_bottom'
+    label='Bottom header',
+    class='header__dnd--bottom'
+  %}
+  {% end_dnd_area %}
+
+
+

@@ -1,0 +1,139 @@
+<!--
+templateType: page
+isAvailableForNewContent: false
+label: Modules
+version: 1
+-->
+{% import "../templates/partials/variables.html" as var %}
+
+  {% boolean "show_labels" label='Show Labels', value=True, no_wrapper=True, export_to_template_context=True %}
+
+  {% include "./partials/header.html" %}
+
+  {% require_css %}
+  <style>
+  .side-panel {
+    position:fixed;
+    left:0;
+    top:0;
+    padding:0 1rem;
+    display:block;
+    z-index:9999;
+    padding:0.5rem;
+  }
+  .side-panel h5 {
+    text-align:center;
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  select#labelDropDown {
+    color: #262628;
+    background-color: #fff;
+    top: 1rem;
+    left: .5rem;
+    z-index: 9999;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    text-transform: capitalize;
+    -webkit-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+    min-width: 300px;
+  }
+  .sr-module-label {
+    padding:1rem 0;
+  }
+  .sr-module-label.bg-secondary.border-primary {
+    background-color: var(--primary)!important;
+    color:#fff!Important;
+    filter: brightness(110%);
+  }
+  .sr-module-label h5 {
+    color:#fff!Important;
+  }
+  </style>
+  {% end_require_css %}
+
+
+  {% if widget_data.show_labels.value %}
+  <div class="side-panel">
+  <div class="toggle"></div>
+  <select name="dropDown" id="labelDropDown">
+    <option class="option-first">Select Module to View</option>
+  </select>
+  </div>
+  {% require_js %}
+  <script>
+  $('.sr-module-label').each(function() {
+    var id = this.id.replace("sr", "").replace("label-", " ").replace(/-/g, ' ');
+    $( "#labelDropDown" ).append( "<option value='#" + this.id + "'>"+id+"</option>" );
+  });
+
+  var dropDownValue = document.getElementById("labelDropDown");
+  dropDownValue.onchange = function() {
+    $("html, body").animate({
+      scrollTop: $(this.value).offset().top
+    }, 400,function() {
+      window.location.hash = this.value;
+    });
+  };
+  </script>
+  {% end_require_js %}
+  {% endif %}
+
+
+  <body class="{% block body_class %}{% text 'body_class' label='Body Class' no_wrapper=True %}{% endblock %}">
+  {% dnd_area "body_dnd_area" label="Main content" %}
+
+    {% dnd_section %}
+			  {% dnd_module overrideable=True, path='../custom-modules/Nav Dropdown 01', widget_name='Nav Dropdown 01', label='Nav Dropdown 01' %}{% end_dnd_module %}
+		{% end_dnd_section %}
+
+    {% dnd_section %}
+      {% dnd_module overrideable=True, path='../custom-modules/Nav Min 01', widget_name='Nav Min 01', label='Nav Min 01' %}{% end_dnd_module %}
+    {% end_dnd_section %}
+
+    {% dnd_section %}
+      {% dnd_module overrideable=True, path='../custom-modules/Cards Testimonial Slider 01', widget_name='Cards Testimonial Slider 01', label='Cards Testimonial Slider 01' %}{% end_dnd_module %}
+    {% end_dnd_section %}
+
+    {% dnd_section %}
+      {% dnd_module overrideable=True, path='../custom-modules/Clients 01', widget_name='Clients 01', label='Clients 01' %}{% end_dnd_module %}
+    {% end_dnd_section %}
+
+
+    {% dnd_section %}
+      {% dnd_module overrideable=True, path='../custom-modules/Hero 01', widget_name='Hero 01', label='Hero 01' %}{% end_dnd_module %}
+    {% end_dnd_section %}
+
+
+    {% dnd_section %}
+      {% dnd_module overrideable=True, path='../custom-modules/Offer Bar 03', widget_name='Offer Bar 03', label='Offer Bar 03' %}{% end_dnd_module %}
+    {% end_dnd_section %}
+
+
+    {% dnd_section %}
+      {% dnd_module overrideable=True, path='../custom-modules/Offer One Col 01', widget_name='Offer One Col 01', label='Offer One Col 01' %}{% end_dnd_module %}
+    {% end_dnd_section %}
+
+
+    {% dnd_section %}
+      {% dnd_module overrideable=True, path='../custom-modules/One Col 01', widget_name='One Col 01', label='One Col 01' %}{% end_dnd_module %}
+    {% end_dnd_section %}
+
+
+    {% dnd_section %}
+      {% dnd_module overrideable=True, path='../custom-modules/Footer Min 01', widget_name='Footer Min 01', label='Footer Min 01' %}{% end_dnd_module %}
+    {% end_dnd_section %}
+
+
+    {% dnd_section %}
+      {% dnd_module overrideable=True, path='../custom-modules/Footer 04', widget_name='Footer 04', label='Footer 04' %}{% end_dnd_module %}
+    {% end_dnd_section %}
+
+  {% end_dnd_area %}
+
+  {% include "./partials/footer-includes.html" %}
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!--
+  templateType: email_subscriptions_confirmation_page
+  isAvailableForNewContent: true
+  label: Subscription Confirm Page
+  screenshotPath: ../images/template-previews/DARK-Subscription-Confirm-Page.png
+-->
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper bg-color">
+  <section class="content-wrapper">
+    <div class="systems-page">
+      {% module 'subscriptions_confirmation'
+        path='@hubspot/email_subscriptions_confirmation'
+      %}
+    </div>
+  </section>
+</main>
+{% endblock body %}

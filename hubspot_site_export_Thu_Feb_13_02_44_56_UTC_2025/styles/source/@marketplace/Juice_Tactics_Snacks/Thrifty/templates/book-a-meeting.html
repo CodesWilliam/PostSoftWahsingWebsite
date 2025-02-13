@@ -1,0 +1,681 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Book A Meeting Landing Page
+screenshotPath: ../images/template-previews/book-meeting.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block header %}
+{% global_partial path='./partials/header-no-navigation.html' %}
+{% endblock header %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper">
+  {% dnd_area 'dnd_area' class='body-container body-container--book-a-meeting-landing-page', label='Main section' %}
+
+  {# START: Hero Single Column #}
+  {% dnd_section
+  background_image={
+    "background_position" : "MIDDLE_CENTER",
+    "background_size" : "cover",
+    "image_url" : get_asset_url('../images/courier-driver.jpg')
+  },
+  padding={
+    "default" : {
+      "bottom" : "180px",
+      "top" : "100px"
+    },
+    "mobile" : {
+      "bottom" : "100px",
+      "top" : "70px"
+    }
+  },
+  margin={
+    "mobile" : {
+      "bottom" : "40px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-hero-2",
+        offset=0,
+        width=12,
+        button_1={
+          "button_text" : ""
+        },
+        button_2={
+          "button_text" : ""
+        },
+        heading_text="Book <strong>A Meeting</strong>",
+        styles={
+          "button_1" : {
+            "button_background_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "button_border_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "button_text_color" : {
+              "color" : "#ff9a52",
+              "opacity" : 100
+            }
+          },
+          "heading" : {
+            "heading_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "heading_font_size" : 60
+          }
+        },
+        tag_line=""
+      %}
+  {% module_attribute "rich_text" %}
+
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %} 
+  {# END: Hero Single Column #}
+
+  {# START: Two Column Content with Meeting #}
+  {% dnd_section background_color="rgba(243, 243, 247, 1)" %}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-two-column-content-3",
+        offset=0,
+        width=12,
+        button={
+          "button_text": ""
+        },
+        form={
+          "type" : "form"
+        },
+        styles={
+          "enable_top_negative" : true,
+          "button" : {
+            "button_outline" : true
+          },
+          "content_type" : "right-form",
+          "form" : {
+            "border" : {
+              "form_border" : {
+                "bottom" : {
+                  "color" : "#ff6a00",
+                  "opacity" : 100,
+                  "style" : "solid",
+                  "width" : {
+                    "units" : "px",
+                    "value" : 1
+                  }
+                },
+                "left" : {
+                  "color" : "#ff6a00",
+                  "opacity" : 100,
+                  "style" : "solid",
+                  "width" : {
+                    "units" : "px",
+                    "value" : 1
+                  }
+                },
+                "right" : {
+                  "color" : "#ff6a00",
+                  "opacity" : 100,
+                  "style" : "solid",
+                  "width" : {
+                    "units" : "px",
+                    "value" : 1
+                  }
+                },
+                "top" : {
+                  "color" : "#ff6a00",
+                  "opacity" : 100,
+                  "style" : "solid",
+                  "width" : {
+                    "units" : "px",
+                    "value" : 1
+                  }
+                }
+              }
+            },
+            "spacing" : {
+              "margin" : {
+                "bottom" : {
+                  "units" : "px",
+                  "value" : 0
+                },
+                "top" : {
+                  "units" : "px",
+                  "value" : 0
+                }
+              },
+              "padding" : {
+                "bottom" : {
+                  "units" : "px",
+                  "value" : 0
+                },
+                "left" : {
+                  "units" : "px",
+                  "value" : 0
+                },
+                "right" : {
+                  "units" : "px",
+                  "value" : 0
+                },
+                "top" : {
+                  "units" : "px",
+                  "value" : 0
+                }
+              }
+            }
+          },
+          "heading" : {
+            "heading_font_size" : 40,
+            "heading_type" : "<h2>"
+          },
+          "tagline" : {
+            "tag_line_divider" : true
+          }
+        },
+        tag_line="Schedule your",
+        heading_text= "Meeting with us"
+      %}
+  {% module_attribute "content" %}
+  <h3><span>Add a persuasive sub-headline in here.</span></h3>
+  <p><span><strong>Add an explanation</strong>&nbsp;- Make visitors understand exactly what the topic is about, why you addressing the topic and how you're going to do it. Keep it short and sweet.</span></p>
+  <ul role="list">
+    <li><span>Why should visitors download it?</span></li>
+    <li><span>What are visitors going to benefit from it?</span></li>
+    <li><span>Proof that it's really sweet.</span></li>
+  </ul>
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Two Column Content 4 #}
+
+  {# START: Card Four column Counter #}
+  {% dnd_section %}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-animated-counter",
+        offset=0,
+        width=12,
+        button={
+          "button_text" : ""
+        },
+        card=[ {
+          "card_content" : "<p style=\'font-size: 18px;\'>Happy Customers</p>",
+          "card_number" : "219",
+          "card_suffix" : "+"
+        }, {
+          "card_content" : "<p style=\'font-size: 18px;\'>Sales Calls</p>",
+          "card_number" : "6500",
+          "card_suffix" : "H"
+        }, {
+          "card_content" : "<p style=\'font-size: 18px;\'>Team members</p>",
+          "card_number" : "100",
+          "card_suffix" : "+"
+        }, {
+          "card_content" : "<p style=\'font-size: 18px;\'>Global Revenue</p>",
+          "card_number" : "3000",
+          "card_suffix" : "K"
+        } ],
+        heading_text="Grow with <strong>Thrifty</strong>",
+        styles={
+          "card" : {
+            "background" : {
+              "card_background_gradient" : {
+                "colors" : [ {
+                  "color" : {
+                    "a" : 1,
+                    "b" : 238,
+                    "g" : 231,
+                    "r" : 231
+                  }
+                }, {
+                  "color" : {
+                    "a" : 1,
+                    "b" : 238,
+                    "g" : 231,
+                    "r" : 231
+                  }
+                } ],
+                "side_or_corner" : {
+                  "verticalSide" : "BOTTOM"
+                }
+              }
+            },
+            "number" : {
+              "card_number_color" : {
+                "color" : "#1c1d29",
+                "opacity" : 100
+              },
+              "card_number_size" : 40
+            }
+          },
+          "tagline" : {
+            "tag_line_divider" : true
+          }
+        },
+        tag_line="Business Statistics"
+      %}
+  {% module_attribute "rich_text" %}
+
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Card Four column Counter #}
+
+  {# Start: Two Column Content #}
+  {% dnd_section
+  background_color="rgba(243, 243, 247, 1)"
+%}
+  {% dnd_module
+    path="../modules/th-two-column-content-1",
+    offset=0,
+    width=12,
+    heading_text="Clear and bold header",
+    image={
+      "alt" : "boy-team",
+      "height" : 427,
+      "loading" : "lazy",
+      "max_height" : 427,
+      "max_width" : 640,
+      "size_type" : "auto",
+      "src" : get_asset_url('../images/boy-team.jpg'),
+      "width" : 640
+    },
+    styles={
+      "content_type" : "right-image",
+      "heading" : { }
+    },
+    tag_line="Supporting Tagline",
+    button={
+      "button_text" : "Get Started"
+    }
+  %}
+  {% module_attribute "rich_text" %}
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+  {# END: Two Column Content #}
+  
+  {# START: Testimonial Slider #}
+  {% dnd_section
+  background_color="rgba(28, 29, 41, 1)" %}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-testimonial",
+        offset=0,
+        width=12,
+        heading_text="",
+        styles={
+          "author" : {
+            "author_testimonial_name_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "author_testimonial_quote_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 64
+            },
+            "author_testimonial_title_color" : {
+              "color" : "#ff6a00",
+              "opacity" : 100
+            }
+          },
+          "carousel" : {
+            "navigation_type" : "arrows"
+          },
+          "heading" : {
+            "heading_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            }
+          },
+          "tagline" : {
+            "tag_line_divider" : true
+          }
+        },
+        tag_line="",
+        testimonial=[ {
+          "testimonial_image" : {
+            "alt" : "women-s-white-and-black-button-up-collared-shirt",
+            "height" : 960,
+            "loading" : "lazy",
+            "max_height" : 960,
+            "max_width" : 640,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/women-s-white-and-black-button-up-collared-shirt.jpg'),
+            "width" : 640
+          },
+          "testimonial_name" : "Person name",
+          "testimonial_text" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>",
+          "testimonial_title" : "Actress"
+        }, {
+          "testimonial_image" : {
+            "alt" : "women-s-white-and-black-button-up-collared-shirt",
+            "height" : 960,
+            "loading" : "lazy",
+            "max_height" : 960,
+            "max_width" : 640,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/women-s-white-and-black-button-up-collared-shirt.jpg'),
+            "width" : 640
+          },
+          "testimonial_name" : "Person name",
+          "testimonial_text" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>",
+          "testimonial_title" : "Founder"
+        }, {
+          "testimonial_image" : {
+            "alt" : "women-s-white-and-black-button-up-collared-shirt",
+            "height" : 960,
+            "loading" : "lazy",
+            "max_height" : 960,
+            "max_width" : 640,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/women-s-white-and-black-button-up-collared-shirt.jpg'),
+            "width" : 640
+          },
+          "testimonial_name" : "Person name",
+          "testimonial_text" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>",
+          "testimonial_title" : "Businesswoman"
+        } ]
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Testimonial Slider #}
+  
+  {# Start: Two Column Content #}
+  {% dnd_section %}
+  {% dnd_module
+    path="../modules/th-two-column-content-1",
+    offset=0,
+    width=12,
+    heading_text="Clear and bold header",
+    image={
+      "alt" : "boy-team",
+      "height" : 427,
+      "loading" : "lazy",
+      "max_height" : 427,
+      "max_width" : 640,
+      "size_type" : "auto",
+      "src" : get_asset_url('../images/about-image-1.jpg'),
+      "width" : 640
+    },
+    styles={
+      "content_type" : "left-image",
+      "heading" : { }
+    },
+    tag_line="Supporting Tagline",
+    button={
+      "button_text" : "Get Started"
+    }
+  %}
+  {% module_attribute "rich_text" %}
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+  {# END: Two Column Content #}
+  
+  {# START: Logo Slider #}
+  {% dnd_section
+  background_color="rgba(243, 243, 247, 1)"
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-logo-slider",
+        offset=0,
+        width=12,
+        button={
+          "button_text" : ""
+        },
+        heading_text="Lorem ipsum dolor sit amet",
+        logo=[ {
+          "boolean_field" : false,
+          "filter" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-1.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "boolean_field" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-2.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "boolean_field" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-3.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "boolean_field" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-4.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "boolean_field" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-5.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "filter" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-6.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "filter" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-1.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        } ],
+        styles={
+          "dots" : false,
+          "dots_color" : {
+            "color" : "#ff6a00",
+            "opacity" : 100
+          },
+          "heading" : {
+            "heading_font_size" : 30
+          },
+          "slide_background_color" : {
+            "color" : "#e7e7ee",
+            "opacity" : 100
+          },
+          "tagline" : {
+            "tag_line_divider" : true
+          }
+        },
+        tag_line="Our Customers"
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Logo Slider #}
+
+  {# Start: Two Column CTA #}
+  {% dnd_section %}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-cta-1",
+        offset=0,
+        width=12,
+        description_content={
+          "content" : "<h3>Try our freemium theme</h3><p>With advanced features of higher quality than other similar marketplace themes</p>",
+          "button": {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://484997.hs-sites.com/thrifty/book-meeting",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "GET STARTED"
+          }
+        },
+        heading_text="Choose the perfect theme",
+        styles={
+          "tag_line_divider" : true
+        },
+        tag_line="Why not now?"
+      %}
+  {% module_attribute "rich_text" %}
+  <p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Two Column CTA #}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}
+
+{% block footer %}
+{% global_partial path='./partials/footer-no-navigation.html' %}
+{% endblock footer %}

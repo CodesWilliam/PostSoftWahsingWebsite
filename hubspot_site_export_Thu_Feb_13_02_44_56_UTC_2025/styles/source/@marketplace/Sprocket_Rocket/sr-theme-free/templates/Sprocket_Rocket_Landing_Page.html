@@ -1,0 +1,46 @@
+<!--
+templateType: page
+isAvailableForNewContent: false
+label: Landing Page 01
+screenshotPath: ../images/Landing.png
+version: 1
+-->
+
+	{% include './partials/header.html' %}
+
+	<body class="{% block body_class %}{% text 'body_class' label='Body Class' no_wrapper=True %}{% endblock %}">
+		{% dnd_area "body_dnd_area" label="Main content" %}
+
+			{% dnd_section %}
+				{% dnd_module overrideable=True, widget_name='Nav Min 01', path='../custom-modules/Nav Min 01', label='Nav Min 01' %}{% end_dnd_module %}
+			{% end_dnd_section %}
+
+			{% dnd_section %}
+				{% dnd_module overrideable=True, path='../custom-modules/Hero 01', widget_name='Hero 01', label='Hero 01' height="small" %}{% end_dnd_module %}
+			{% end_dnd_section %}
+
+			{% dnd_section %}
+				{% dnd_module overrideable=True, path='../custom-modules/Clients 01', widget_name='Clients 01', label='Clients 01' %}{% end_dnd_module %}
+			{% end_dnd_section %}
+
+			{% dnd_section %}
+				{% dnd_module overrideable=True, path='../custom-modules/Cards Testimonial Slider 01', widget_name='Cards Testimonial Slider 01', label='Cards Testimonial Slider 01' %}{% end_dnd_module %}
+			{% end_dnd_section %}
+
+			{% dnd_section %}
+				{% dnd_module overrideable=True, path='../custom-modules/One Col 01', widget_name='One Col 01', label='One Col 01' %}{% end_dnd_module %}
+			{% end_dnd_section %}
+
+			{% dnd_section %}
+				{% dnd_module overrideable=True, path='../custom-modules/Offer One Col 01', widget_name='Offer One Col 01', label='Offer One Col 01' %}{% end_dnd_module %}
+			{% end_dnd_section %}
+
+			{% dnd_section %}
+				{% dnd_module overrideable=True, path='../custom-modules/Footer Min 01', widget_name='Footer Min 01', label='Footer Min 01' %}{% end_dnd_module %}
+			{% end_dnd_section %}
+
+		{% end_dnd_area %}
+
+		{% include './partials/footer-includes.html' %}
+	</body>
+</html>

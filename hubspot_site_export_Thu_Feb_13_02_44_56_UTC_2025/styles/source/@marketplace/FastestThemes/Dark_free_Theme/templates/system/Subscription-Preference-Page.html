@@ -1,0 +1,19 @@
+<!--
+  templateType: email_subscription_preferences_page
+  isAvailableForNewContent: true
+  label: Subscription Preferences Page
+  screenshotPath: ../images/template-previews/DARK-Subscription-Preference-Page.png
+-->
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper bg-color">
+  <section class="content-wrapper">
+    <div class="systems-page">
+      {% module 'subscription_preferences'
+        path='@hubspot/email_subscriptions'
+      %}
+    </div>
+  </section>
+</main>
+{% endblock body %}

@@ -1,0 +1,222 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Contact
+screenshotPath: ../images/template-previews/contact.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper">
+  {% dnd_area 'dnd_area' class='body-container body-container--contact', label='Main section' %}
+
+  {# START: Hero Single Column #}
+  {% dnd_section
+  background_image={
+    "background_position" : "MIDDLE_CENTER",
+    "background_size" : "cover",
+    "image_url" : get_asset_url('../images/courier-driver.jpg')
+  },
+  padding={
+    "default" : {
+      "bottom" : "180px",
+      "top" : "100px"
+    },
+    "mobile" : {
+      "bottom" : "100px",
+      "top" : "70px"
+    }
+  },
+  margin={
+    "mobile" : {
+      "bottom" : "40px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-hero-2",
+        offset=0,
+        width=12,
+        button_1={
+          "button_text" : ""
+        },
+        button_2={
+          "button_text" : ""
+        },
+        heading_text="Contact <strong>Us</strong>",
+        styles={
+          "button_1" : {
+            "button_background_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "button_border_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "button_text_color" : {
+              "color" : "#ff9a52",
+              "opacity" : 100
+            }
+          },
+          "heading" : {
+            "heading_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "heading_font_size" : 60
+          }
+        },
+        tag_line=""
+      %}
+  {% module_attribute "rich_text" %}
+
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %} 
+  {# END: Hero Single Column #}
+
+  {# START: Form Two Column #}
+  {% dnd_section %}
+  {% dnd_module path='../modules/th-form',
+    styles={
+           "form_border":{
+              "border_radius": { "value": 0, "units": "px" }
+           }
+        }
+    %}
+  {% end_dnd_module %} 
+  {% end_dnd_section %}
+  {# END: Form #}
+  
+  {# Start: Two Cloumn Content with List #} 
+  {% dnd_section
+  background_color="rgba(243, 243, 247, 1)"
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-two-column-content-2",
+        offset=0,
+        width=12,
+        button={
+          "button_icon" : {
+            "name" : "Alternate Arrow Circle Right",
+            "type" : "SOLID",
+            "unicode" : "f35a"
+          },
+          "button_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "https://484997.hs-sites.com/thrifty/contact",
+              "type" : "EXTERNAL"
+            }
+          },
+          "button_text" : "Reach us"
+        },
+        heading_text="Do you need help?",
+        services=[ {
+          "services_icon" : {
+            "name" : "Alternate Phone",
+            "type" : "SOLID",
+            "unicode" : "f879"
+          },
+          "services_text" : "<p>+1 234 567-890</p>",
+          "services_title" : "Phone"
+        }, {
+          "services_icon" : {
+            "name" : "Question Circle",
+            "type" : "SOLID",
+            "unicode" : "f059"
+          },
+          "services_text" : "<p><span>help@thrifty.com</span></p>",
+          "services_title" : "Email"
+        }, {
+          "services_icon" : {
+            "name" : "Alternate Map Marker",
+            "type" : "SOLID",
+            "unicode" : "f3c5"
+          },
+          "services_text" : "<p>25th Old Street, New Bazar, India</p>",
+          "services_title" : "Location"
+        } ],
+        styles={
+          "services" : {
+            "background" : {
+              "services_background_gradient" : {
+                "colors" : [ {
+                  "color" : {
+                    "a" : 1,
+                    "b" : 255,
+                    "g" : 255,
+                    "r" : 255
+                  }
+                }, {
+                  "color" : {
+                    "a" : 1,
+                    "b" : 255,
+                    "g" : 255,
+                    "r" : 255
+                  }
+                } ],
+                "side_or_corner" : {
+                  "verticalSide" : "BOTTOM"
+                }
+              }
+            }
+          },
+          "services_background_gradient" : {
+            "colors" : [ {
+              "color" : {
+                "a" : 1,
+                "b" : 238,
+                "g" : 238,
+                "r" : 238
+              }
+            }, {
+              "color" : {
+                "a" : 1,
+                "b" : 204,
+                "g" : 204,
+                "r" : 204
+              }
+            }, {
+              "color" : {
+                "a" : 1,
+                "b" : 153,
+                "g" : 153,
+                "r" : 153
+              }
+            } ],
+            "side_or_corner" : {
+              "verticalSide" : "BOTTOM"
+            }
+          },
+          "services_type" : "left-services"
+        },
+        tag_line="Sales and Support"
+      %}
+  {% module_attribute "rich_text" %}
+  <p>Our customer representative helps you to understand what we offer for your business goals.</p>
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Two Cloumn Content with List #} 
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

@@ -1,0 +1,56 @@
+<!--
+templateType: blog_listing
+isAvailableForNewContent: false
+label: SR Blog v1
+screenshotPath: ../images/Blog_Listing.png
+-->
+
+{% include '../header.html' %}
+
+	{{ require_css(get_asset_url('./css/sr-blog.css'), { async: true }) }}
+
+	<body class="blog {% block body_class %}{% text 'body_class' label="Body Class" value='' no_wrapper=True %}{% endblock %}">
+
+		{% block header %}
+			{% boolean "enabled_site_header" label='Enable Global Site Header', value=true, export_to_template_context=True %}
+			{% if widget_data.enabled_site_header.value %}
+				{% global_partial path="../../templates/partials/site_header.html" %}
+			{% endif %}
+			{% global_partial path="./partials/blog_header.html" %}
+		{% endblock header %}
+
+		{% block body %}
+			{% set blog_ns = namespace() %}
+			{% if blog_author %}
+			{% include './partials/blog_author.html' %}
+			{% elif tag %}
+			{% include './partials/blog_tag.html' %}
+			{% else %}
+			{% dnd_area "body_dnd_area", class='body_dnd_area' label="Main Content" %}
+				{% dnd_section %}
+					{% dnd_module overrideable=True, widget_name='Blog Hero 01', path='./custom-modules/Blog Hero 01', label='Blog Hero 01' %}{% end_dnd_module %}
+				{% end_dnd_section %}
+
+				{% dnd_section %}
+					{% dnd_module overrideable=True, widget_name='Blog Listing 02', path='./custom-modules/Blog Listing 02', label='Blog Listing 02' %}{% end_dnd_module %}
+				{% end_dnd_section %}
+
+				{% dnd_section %}
+					{% dnd_module overrideable=True, widget_name='Blog Pagination', path='./custom-modules/Blog Pagination', label='Blog Pagination' %}{% end_dnd_module %}
+				{% end_dnd_section %}
+			{% end_dnd_area %}
+			{% endif %}
+		{% endblock body %}
+
+
+		{% block footer %}
+			{% global_partial path="./partials/blog_footer.html" %}
+			{% boolean "enabled_site_footer" label='Enable Global Site Footer', value=true, export_to_template_context=True %}
+			{% if widget_data.enabled_site_footer.value %}
+				{% global_partial path="../../templates/partials/site_footer.html" %}
+			{% endif %}
+		{% endblock footer %}
+
+		{% include '../footer-includes.html' %}
+	</body>
+</html>

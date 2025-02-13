@@ -1,0 +1,133 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Pillar Page
+screenshotPath: ../images/template-previews/pillar.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block header %}
+{% global_partial path='./partials/header-no-navigation.html' %}
+{% endblock header %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper">
+  {% dnd_area 'dnd_area' class='body-container body-container--pillar-page', label='Main section' %}
+
+  {# START: Hero Single Column #}
+  {% dnd_section
+  background_image={
+    "background_position" : "MIDDLE_CENTER",
+    "background_size" : "cover",
+    "image_url" : get_asset_url('../images/about-image-2.jpg')
+  },
+  padding={
+    "default" : {
+      "bottom" : "180px",
+      "top" : "100px"
+    },
+    "mobile" : {
+      "bottom" : "100px",
+      "top" : "70px"
+    }
+  },
+  margin={
+    "mobile" : {
+      "bottom" : "40px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-hero-2",
+        offset=0,
+        width=12,
+        button_1={
+          "button_text" : ""
+        },
+        button_2={
+          "button_text" : ""
+        },
+        heading_text="Pillar <strong>Page</strong>",
+        styles={
+          "button_1" : {
+            "button_background_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "button_border_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "button_text_color" : {
+              "color" : "#ff9a52",
+              "opacity" : 100
+            }
+          },
+          "heading" : {
+            "heading_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "heading_font_size" : 60
+          }
+        },
+        tag_line=""
+      %}
+  {% module_attribute "rich_text" %}
+
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %} 
+  {# END: Hero Single Column #}
+
+  {# START: Sidebar Content #}
+  {% dnd_section %}
+  {% dnd_module path='../modules/th-sidebar-content' %}{% end_dnd_module %} 
+  {% end_dnd_section %}
+  {# END: Sidebar Content #}
+
+  {# START: Blog Listing Signup Form #}
+  {% dnd_section %}
+  {% dnd_module path='../modules/th-subscribe-form',
+     rich_text='<p><span style="font-size: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>',
+      blog_form_text='<p><span style="font-size: 14px;">We will never share your email address with third parties.</span></p>',
+    styles={
+           "heading_font_size": 40
+        }
+    %}
+  {% end_dnd_module %} 
+  {% end_dnd_section %}
+  {# END: Blog Listing Signup Form #}
+
+  {# START: Recent Post #}
+  {% dnd_section background_color="rgba(243, 243, 247, 1)" %}
+  {% dnd_module path='../modules/th-recent-post',
+    tag_line='',
+    heading_text='Latest blog posts',
+    button={
+      "button_text" : ""
+    },
+      styles={
+           "heading_font_size": 40,
+           "content_text_center": true
+        }
+    %}
+  {% end_dnd_module %} 
+  {% end_dnd_section %}
+  {# END: Recent Post #}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}
+
+{% block footer %}
+{% global_partial path='./partials/footer-no-navigation.html' %}
+{% endblock footer %}

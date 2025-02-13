@@ -1,0 +1,101 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Home (customized)
+-->
+{% from '../generated-content.html' import generated_content %}
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+{% dnd_area "dnd_area"
+  label="Main section"
+%}
+
+  {% include_dnd_partial
+    path="../sections/hero-banner.html"
+    context={
+      "heading": generated_content.page_content.hero_banner.heading,
+      "content": generated_content.page_content.hero_banner.content,
+      "button": generated_content.page_content.hero_banner.button,
+      "background_image": generated_content.page_content.hero_banner.image,
+    }
+  %}
+
+  {% include_dnd_partial
+    path="../sections/logo-gallery.html"
+    context={
+      "background_color": generated_content.colors.accent_background,
+    }
+  %}
+
+  {% include_dnd_partial
+    path="../sections/icon-and-copy.html"
+    context={
+      "columns": generated_content.page_content.value_props.items,
+    }
+  %}
+
+  {% include_dnd_partial
+    path="../sections/services.html"
+    context={
+      "anchor_id": "services",
+      "heading": generated_content.page_content.services.heading,
+      "content": generated_content.page_content.services.content,
+      "button": generated_content.page_content.services.button,
+      "services": generated_content.page_content.services.items,
+    }
+  %}
+
+  {% include_dnd_partial
+    path="../sections/pricing.html"
+    context={
+      "heading": generated_content.page_content.pricing.heading,
+      "content": generated_content.page_content.pricing.content,
+      "pricing_cards": generated_content.page_content.pricing.items,
+    }
+  %}
+
+  {% include_dnd_partial
+    path="../sections/testimonials.html"
+    context={
+      "background_color": generated_content.colors.accent_background,
+      "heading": generated_content.page_content.testimonials.heading,
+      "content": generated_content.page_content.testimonials.content,
+      "testimonials": generated_content.page_content.testimonials.items,
+    }
+  %}
+
+  {% include_dnd_partial
+    path="../sections/about.html"
+    context={
+      "anchor_id": "about",
+      "heading": generated_content.page_content.about.heading,
+      "content": generated_content.page_content.about.content,
+      "sub_heading": generated_content.page_content.about.sub_heading,
+      "sub_content": generated_content.page_content.about.sub_content,
+      "image": generated_content.page_content.about.image,
+    }
+  %}
+
+  {% include_dnd_partial
+    path="../sections/offer.html"
+    context={
+      "heading": generated_content.page_content.our_team.heading,
+      "content": generated_content.page_content.our_team.content,
+      "cards": generated_content.page_content.our_team.items,
+    }
+  %}
+
+  {% include_dnd_partial
+    path="../sections/contact-full.html"
+    context={
+      "background_color": generated_content.colors.accent_background,
+      "anchor_id": "contact",
+      "heading": generated_content.page_content.contact.heading,
+      "content": generated_content.page_content.contact.content,
+      "form": generated_content.page_content.contact.form,
+    }
+  %}
+
+{% end_dnd_area %}
+{% endblock body %}

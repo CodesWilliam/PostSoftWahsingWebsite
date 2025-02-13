@@ -1,0 +1,548 @@
+<!--
+  templateType: global_partial
+  label: Website Footer
+-->
+<footer class="footer">
+  {% dnd_area 'footer' class='footer__container', label='Footer' %}
+  
+    {% dnd_section
+          padding={ 
+            'default': { 'top': 40, 'bottom': 40, 'left': 20, 'right': 20 },
+            'mobile': { 'top': 20, 'bottom': 20, 'left': 20, 'right': 20 }
+          }
+    %} 
+      {% dnd_column
+        offset=0,
+        width=4
+      %}
+        {% dnd_row
+          margin={
+            'top': 0,
+            'bottom': 25
+          }
+        %}
+            {% dnd_module path='@hubspot/logo',
+              img='{ 
+              "override_inherited_src": true, 
+              "src": get_asset_url("../../images/thrifty-color.svg"),
+              "alt": "Thrifty",
+              "width": "177",
+              "height": "40",
+              "loading": "lazy"
+            }'
+            label='Logo'
+            %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+  
+       {% dnd_row
+          margin={
+            'top': 0,
+            'bottom': 20
+          }
+        %}
+          {% dnd_module path='@hubspot/rich_text' %}
+            {% module_attribute 'html' %}
+              <p>Thrifty comes with everything to get your business, Rolling. Take your chance to try our freemium theme and crack a mirror for your business. Because you’re out of luck and in control with us.</p>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+  
+      {% end_dnd_column %}
+
+      {% dnd_column
+        offset=4,
+        width=8
+      %}
+  
+        {% dnd_row
+          margin={
+            'top': 0,
+            'bottom': 0
+          }
+        %}
+          {% dnd_column
+            offset=0,
+            width=4
+          %}
+          {% dnd_row %}
+              {% dnd_module path='@hubspot/header',
+                header_tag='h3',
+                value='Pages' 
+              label='Header'
+              %}
+            {% end_dnd_module %}
+          {% end_dnd_row %}
+          {% dnd_row
+           margin={
+                    'top': 0,
+                    'bottom': 25
+                  }
+          %}
+          {% dnd_module path='@hubspot/simple_menu' %}
+            {% module_attribute 'orientation' %}
+            vertical
+            {% end_module_attribute %}
+            {% module_attribute 'menu_tree' is_json=True %} 
+            [
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Home",
+            "linkTarget": null,
+            "linkUrl": "",
+            "children": [],
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "About",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Services",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Pillar",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Content Download",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Blog",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Pricing",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Contact",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            }
+            ]
+            {% end_module_attribute %}
+            {% end_dnd_module %}
+          {% end_dnd_row %}
+  
+          {% end_dnd_column %}
+          
+          {% dnd_column
+            offset=4,
+            width=4
+          %}
+  
+          {% dnd_row %}
+              {% dnd_module path='@hubspot/header',
+                header_tag='h4',
+                value='Blog' 
+              label='Header'
+              %}
+            {% end_dnd_module %}
+          {% end_dnd_row %}
+          
+          {% dnd_row
+           margin={
+                    'top': 0,
+                    'bottom': 25
+                  }
+          %}
+          {% dnd_module path='@hubspot/simple_menu' %}
+            {% module_attribute 'orientation' %}
+            vertical
+            {% end_module_attribute %}
+            {% module_attribute 'menu_tree' is_json=True %} 
+            [
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Blog Listing",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Blog Post",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Blog Author",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Case Studies",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Case Study",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            }
+            ]
+            {% end_module_attribute %}
+            {% end_dnd_module %}
+          {% end_dnd_row %}
+  
+          {% end_dnd_column %}
+  
+          {% dnd_column
+            offset=8,
+            width=4
+          %}
+          
+          {% dnd_row %}
+              {% dnd_module path='@hubspot/header',
+                header_tag='h4',
+                value='Contact' 
+              label='Header'
+              %}
+            {% end_dnd_module %}
+          {% end_dnd_row %}
+  
+           {% dnd_row
+           margin={
+                    'top': 0,
+                    'bottom': 0
+                  }
+          %}
+          {% dnd_module path='@hubspot/simple_menu' %}
+            {% module_attribute 'orientation' %}
+            vertical
+            {% end_module_attribute %}
+            {% module_attribute 'menu_tree' is_json=True %} 
+            [
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "404 Error",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "500 Error",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Email subscription preferences",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Unsubscribe backup pages",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Subscription update confirmation",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Password Prompt",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            },
+            {
+            "contentType": null,
+            "subCategory": null,
+            "pageLinkName": null,
+            "pageLinkId": null,
+            "isPublished": false,
+            "categoryId": null,
+            "linkParams": null,
+            "linkLabel": "Search Results",
+            "linkTarget": null,
+            "linkUrl": "",
+            "isDeleted": false
+            }
+            ]
+            {% end_module_attribute %}
+            {% end_dnd_module %}
+          {% end_dnd_row %}
+  
+          {% end_dnd_column %}
+ 
+        {% end_dnd_row %}
+  
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+  
+     {% dnd_section
+          background_linear_gradient={
+            'direction': 'to right',
+            'colors': [
+              '#FFFFFF',
+              '#FFFFFF'
+            ]
+          }, 
+          padding={ 
+            'default': { 'top': 0, 'bottom': 0, 'left': 0, 'right': 0 },
+            'mobile': { 'top': 0, 'bottom': 0, 'left': 0, 'right': 0 }
+          },
+          vertical_alignment='MIDDLE'
+    %}  
+    {% dnd_column %}
+    {% dnd_row
+            margin={
+              'top': 0,
+              'bottom': 0
+            }
+          %}
+    {% dnd_module path='@hubspot/divider' %}
+    
+    {% end_dnd_module %}
+    {% end_dnd_row %}
+     {% end_dnd_column %}
+  
+    {% end_dnd_section %}
+    {# End social follow and copyright section #}
+  
+    {# Social follow and copyright section #}
+    {% dnd_section
+          background_linear_gradient={
+            'direction': 'to right',
+            'colors': [
+              '#FFFFFF',
+              '#FFFFFF'
+            ]
+          }, 
+          padding={ 
+            'default': { 'top': 20, 'bottom': 20, 'left': 20, 'right': 20 },
+            'mobile': { 'top': 20, 'bottom': 20, 'left': 20, 'right': 20 }
+          },
+          vertical_alignment='MIDDLE'
+    %}  
+      {% dnd_column
+        offset=0,
+        width=6
+      %}
+
+         {% dnd_row %}
+          {% dnd_module path='@hubspot/simple_menu'
+           extra_classes="footer-simple-menu"
+          %}
+            {% module_attribute 'orientation' %}
+              horizontal
+            {% end_module_attribute %}
+            {% module_attribute 'menu_tree' is_json=True %} 
+              [
+                {
+                    "contentType": null,
+                    "subCategory": null,
+                    "pageLinkName": null,
+                    "pageLinkId": null,
+                    "isPublished": false,
+                    "categoryId": null,
+                    "linkParams": null,
+                    "linkLabel": "Terms and Services",
+                    "linkTarget": null,
+                    "linkUrl": "",
+                    "children": [],
+                    "isDeleted": false
+                },
+                {
+                    "contentType": null,
+                    "subCategory": null,
+                    "pageLinkName": null,
+                    "pageLinkId": null,
+                    "isPublished": false,
+                    "categoryId": null,
+                    "linkParams": null,
+                    "linkLabel": "Privacy Policy",
+                    "linkTarget": null,
+                    "linkUrl": "",
+                    "isDeleted": false
+                }
+              ]
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+        
+      {% end_dnd_column %}
+  
+     {% dnd_column
+        offset=6,
+        width=6
+      %}
+    
+      {% dnd_row
+              margin={
+                'top': 0,
+                'bottom': 0
+              },
+             vertical_alignment='MIDDLE'
+            %}
+              {% dnd_module path='../../modules/social-follow',
+                        label='Social follow',
+                        extra_classes="footer-social-follow"
+                        }
+                      %}
+              {% end_dnd_module %}
+
+              {% end_dnd_row %}
+
+     {% end_dnd_column %}
+  
+    {% end_dnd_section %}
+    {# End social follow and copyright section #}
+ 
+  {% end_dnd_area %}
+</footer>

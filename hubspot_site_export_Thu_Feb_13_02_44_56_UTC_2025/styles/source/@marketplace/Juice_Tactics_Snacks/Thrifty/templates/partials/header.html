@@ -1,0 +1,97 @@
+<!--
+templateType: global_partial
+label: Website header
+-->
+<header class="header {% if theme.spacing.enable_boxed_container == "false" %}box-shadow{% endif %}" id="global-header">
+
+  {# The link below is used for a navigation skipper which allows users navigating the site with their keyboard to skip over the site navigation. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+  <a href="#main-content" class="header__skip">Skip to content</a>
+
+  {# Top header drag and drop area #}
+  {% dnd_area 'header-top' label='Top header' class='content-wrapper' %}
+  {% end_dnd_area %}
+  {# End top header drag and drop area #}
+
+  <div class="header__container">
+
+    {# Header navigation column #}
+    <div class="header__column {% if theme.spacing.enable_boxed_container == "true" %}ml-40 mr-40{% endif %}">
+
+      {# Header navigation row one #}
+      <div class="header__row-1 {% if content.translated_content.values()|selectattr('published')|length || is_listing_view && group.translations %}language-switcher-active{% endif %}">
+        <div class="header__row-1-container" id="header-row-1">
+
+          {% if content.translated_content.values()|selectattr('published')|length || is_listing_view && group.translations %}
+          <div class="header__language-switcher header--element">
+
+            <div class="header__language-switcher--label header-element-col">
+
+              {% module 'language-switcher' path='@hubspot/language_switcher',
+                label='Language switcher',
+                display_mode='localized'
+              %}
+              <div class="header__language-switcher--label-current"> {{ locale_name(locale) }}</div>
+            </div>
+          </div>
+          {% endif %}
+          {% if theme.header.enable_search == true %}
+          <div class="header__search header--element">
+            {% module 'site_search' path='@hubspot/search_input',
+            label='Search',
+            field_label='',
+            placeholder='Search...',
+            include_search_button='false'
+          %}
+          </div>
+          {% endif %}
+        </div>
+
+      </div>
+      {# End header navigation row one #}
+
+      {# Header navigation row two #}
+      <div class="header__row-2 border-radius {% if theme.spacing.enable_boxed_container == "true" %}mt-40 ml-auto mr-auto mb-0{% endif %}" id="header-row-2">
+        {# Header logo column #}
+        <div class="header__logo header__logo--main">
+          {% module 'site_logo' path='@hubspot/logo'
+        img='{ 
+          "override_inherited_src": true, 
+          "src": get_asset_url("../../images/thrifty-color.svg"),
+          "alt": "Thrifty",
+          "width": "177",
+          "height": "40",
+          "loading": "lazy"
+        }'
+        label='Logo'
+      %}
+        </div>
+        {# End header logo column #}
+
+        <div class="header--toggle header__navigation--toggle" id="header-navigation-toggle"></div>
+        {% if content.translated_content.values()|selectattr('published')|length || is_listing_view && group.translations %}
+        <div class="header--toggle header__language-switcher--toggle" id="header-language-switcher-toggle"></div>
+        {% endif %}
+        {% if theme.header.enable_search == true %}
+        <div class="header--toggle header__search--toggle" id="header-search-toggle"></div>
+        {% endif %}
+        <div class="header__close--toggle" id="header-close-toggle"></div>
+        <div class="header__navigation header--element" id="header-element">
+          {% module 'navigation-primary' path='../../modules/menu-section',
+            label='Primary navigation'
+          %}
+          <div>
+            {% module "menu_button" path="../../modules/menu-button", label="Menu Button" %}
+          </div>
+        </div>
+      </div>
+      {# End header navigation row two #}
+    </div>
+    {# End header navigation column #}
+  </div>
+
+  {# Bottom header drag and drop area #}
+  {% dnd_area 'header-bottom' label='Bottom header' class='content-wrapper' %}
+  {% end_dnd_area %}
+  {# End bottom header drag and drop area #}
+
+</header>

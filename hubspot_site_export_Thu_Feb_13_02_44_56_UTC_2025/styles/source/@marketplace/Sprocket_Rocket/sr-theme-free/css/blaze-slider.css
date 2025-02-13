@@ -1,0 +1,55 @@
+.blaze-slider {
+    --slides-to-show: 1;
+    --slide-gap: 20px;
+    direction: ltr
+}
+
+.blaze-container {
+    position: relative
+}
+
+.blaze-track-container {
+    overflow: hidden
+}
+
+.blaze-track {
+    will-change: transform;
+    touch-action: pan-y;
+    display: flex;
+    gap: var(--slide-gap);
+    --slide-width: calc((100% - (var(--slides-to-show) - 1) * var(--slide-gap)) / var(--slides-to-show));
+    box-sizing: border-box
+}
+
+.blaze-track>* {
+    box-sizing: border-box;
+    width: var(--slide-width);
+    flex-shrink: 0
+}
+
+.blaze-pagination {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.blaze-pagination button {
+    font-size: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    outline: none;
+    border: none;
+    background: var(--primary);
+    cursor: pointer;
+    transition: transform 200ms ease, background-color 300ms ease, box-shadow 300ms ease;
+    box-shadow: 0 0 0 2px transparent;
+    margin: 2px 0;
+	padding: 0;
+}
+
+.blaze-pagination button.active {
+    background-color: transparent;
+    box-shadow: 0 0 0 2px var(--primary);
+}

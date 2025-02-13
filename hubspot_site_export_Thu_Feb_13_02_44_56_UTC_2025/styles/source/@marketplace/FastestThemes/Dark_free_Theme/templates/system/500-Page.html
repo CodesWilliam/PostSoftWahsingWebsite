@@ -1,0 +1,18 @@
+<!--
+  templateType: error_page
+  isAvailableForNewContent: true
+  label: 500 Page
+  screenshotPath: ../images/template-previews/DARK-500-Page.png
+-->
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper bg-color">
+  <section class="content-wrapper">
+    <div class="error-page" data-error="500">
+      <h1 class="error-page__heading">Something isn't quite right</h1>
+      <p>Sorry, an internal server error occurred. But have no fear, we're on the case!</p>
+    </div>
+  </section>
+</main>
+{% endblock body %}

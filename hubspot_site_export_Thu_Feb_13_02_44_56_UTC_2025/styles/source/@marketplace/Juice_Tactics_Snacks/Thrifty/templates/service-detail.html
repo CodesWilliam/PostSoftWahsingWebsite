@@ -1,0 +1,506 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Service detail
+screenshotPath: ../images/template-previews/service-detail.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper">
+  {# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+  {% dnd_area 'dnd_area' class='body-container body-container--services container-fluid-custom', label='Main section' %}
+
+  {# START: Hero Single Column #}
+  {% dnd_section
+  background_image={
+    "background_position" : "MIDDLE_CENTER",
+    "background_size" : "cover",
+    "image_url" : get_asset_url('../images/courier-driver.jpg')
+  },
+  padding={
+    "default" : {
+      "bottom" : "180px",
+      "top" : "100px"
+    },
+    "mobile" : {
+      "bottom" : "100px",
+      "top" : "50px"
+    }
+  },
+  margin={
+    "mobile" : {
+      "bottom" : "40px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-hero-2",
+        offset=0,
+        width=12,
+        button_1={
+          "button_text" : ""
+        },
+        button_2={
+          "button_text" : ""
+        },
+        heading_text="Page <strong>Title</strong>",
+        styles={
+          "button_1" : {
+            "button_background_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "button_border_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "button_text_color" : {
+              "color" : "#ff9a52",
+              "opacity" : 100
+            }
+          },
+          "heading" : {
+            "heading_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "heading_font_size" : 60
+          }
+        },
+        tag_line="Service"
+      %}
+  {% module_attribute "rich_text" %}
+
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %} 
+  {# END: Hero Single Column #}
+
+  {# Start: Hero Two Column #}
+  {% dnd_section
+  background_color="rgba(243, 243, 247, 1)" %}  
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-hero-1",
+        offset=0,
+        width=12,
+        button_1={
+          "button_icon" : {
+            "name" : "Alternate Long Arrow Right",
+            "type" : "SOLID",
+            "unicode" : "f30b"
+          },
+          "button_text" : "Get Started"
+        },
+        button_2={
+          "button_icon" : {
+            "name" : "Add to Shopping Cart",
+            "type" : "SOLID",
+            "unicode" : "f217"
+          },
+          "button_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "https://www.hubsnacks.com/",
+              "type" : "EXTERNAL"
+            }
+          },
+          "button_text" : "Buy Now"
+        },
+        heading_text="<strong>Thrifty</strong> comes with <strong>Everything</strong> to Get Business Rolling",
+        image={
+          "alt" : "people-4",
+          "height" : 853,
+          "loading" : "lazy",
+          "max_height" : 853,
+          "max_width" : 1280,
+          "size_type" : "auto",
+          "src" : get_asset_url('../images/people-4.jpg'),
+          "width" : 1280
+        },
+        styles={
+          "button_2" : {
+            "button_outline" : true
+          },
+          "content_text_center" : false,
+          "enable_top_negative" : true,
+          "heading" : {
+            "heading_font_size" : 40,
+            "heading_type" : "<h2>"
+          },
+          "tagline" : {
+            "tag_line_divider" : true
+          }
+        },
+        tag_line="Hero Two Column"
+      %}
+  {% module_attribute "rich_text" %}
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Hero Two Column #}
+
+  {# Start: Accordion #}
+  {% dnd_section %}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-accordion",
+        offset=0,
+        width=12,
+        button={
+          "button_text" : ""
+        },
+        panel=[ {
+          "panel_icon" : {
+            "name" : "plus",
+            "type" : "SOLID",
+            "unicode" : "f067"
+          },
+          "panel_tag_line" : "QUESTION",
+          "panel_text" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</span></p>",
+          "panel_title" : "Your frequently asked question title goes in here."
+        }, {
+          "panel_icon" : {
+            "name" : "plus",
+            "type" : "SOLID",
+            "unicode" : "f067"
+          },
+          "panel_tag_line" : "QUESTION",
+          "panel_text" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</span></p>",
+          "panel_title" : "Your frequently asked question title goes in here."
+        }, {
+          "panel_icon" : {
+            "name" : "plus",
+            "type" : "SOLID",
+            "unicode" : "f067"
+          },
+          "panel_tag_line" : "QUESTION",
+          "panel_text" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</span></p>",
+          "panel_title" : "Your frequently asked question title goes in here."
+        }, {
+          "panel_icon" : {
+            "name" : "plus",
+            "type" : "SOLID",
+            "unicode" : "f067"
+          },
+          "panel_tag_line" : "QUESTION",
+          "panel_text" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</span></p>",
+          "panel_title" : "Your frequently asked question title goes in here."
+        }, {
+          "panel_icon" : {
+            "name" : "plus",
+            "type" : "SOLID",
+            "unicode" : "f067"
+          },
+          "panel_tag_line" : "QUESTION",
+          "panel_text" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</span></p>",
+          "panel_title" : "Your frequently asked question title goes in here."
+        } ],
+        styles={
+          "content_text_center" : false,
+          "panel" : {
+            "tagline" : {
+              "panel_tag_line_divider" : true
+            }
+          },
+          "tagline" : {
+            "tag_line_divider" : true
+          }
+        },
+        tag_line="FAQs"
+      %}
+  {% module_attribute "rich_text" %}
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Accordion #}
+
+  {# START: Logo Slider #}
+  {% dnd_section
+  background_color="rgba(243, 243, 247, 1)"
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-logo-slider",
+        offset=0,
+        width=12,
+        button={
+          "button_text" : ""
+        },
+        heading_text="Lorem ipsum dolor sit amet",
+        logo=[ {
+          "boolean_field" : false,
+          "filter" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-1.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "boolean_field" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-2.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "boolean_field" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-3.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "boolean_field" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-4.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "boolean_field" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-5.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "filter" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-6.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "filter" : false,
+          "image" : {
+            "alt" : "logo-2",
+            "height" : 400,
+            "loading" : "lazy",
+            "max_height" : 400,
+            "max_width" : 400,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/logo-1.svg'),
+            "width" : 400
+          },
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        } ],
+        styles={
+          "dots" : false,
+          "dots_color" : {
+            "color" : "#ff6a00",
+            "opacity" : 100
+          },
+          "heading" : {
+            "heading_font_size" : 40
+          },
+          "slide_background_color" : {
+            "color" : "#e7e7ee",
+            "opacity" : 100
+          },
+          "tagline" : {
+            "tag_line_divider" : true
+          }
+        },
+        tag_line="Our Customers"
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Logo Slider #}
+
+  {# Start: Testimonial Three Column #}
+  {% dnd_section %}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-three-column-testimonial",
+        offset=0,
+        width=12,
+        button={
+          "button_icon" : {
+            "name" : "Alternate Arrow Circle Right",
+            "type" : "SOLID",
+            "unicode" : "f35a"
+          }
+        },
+        heading_text="Lorem ipsum dolor sit amet",
+        styles={
+          "content_type" : "left-card",
+          "tagline" : {
+            "tag_line_divider" : true
+          }
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Testimonial Three Column #}
+  
+  {# Start: Two Column CTA #}
+  {% dnd_section
+  background_color="rgba(231, 231, 238, 1)"
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-cta-1",
+        offset=0,
+        width=12,
+        description_content={
+          "button" : {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "https://484997.hs-sites.com/thrifty/book-meeting",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Book A Meeting"
+          },
+          "content" : "<h3>Contact Us</h3><p>Our customer service representative helps you to understand what we offer for your business goals.</p>"
+        },
+        heading_text="Our <strong>Service</strong>",
+        styles={
+          "description_content_background_color" : {
+            "color" : "#FFFFFF",
+            "opacity" : 100
+          },
+          "tag_line_divider" : false
+        },
+        tag_line="Have more questions about"
+      %}
+  {% module_attribute "rich_text" %}
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Two Column CTA #}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

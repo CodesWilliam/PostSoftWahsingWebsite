@@ -1,0 +1,39 @@
+<!--
+templateType: email_backup_unsubscribe_page
+isAvailableForNewContent: true
+label: SR Backup Unsubscribe
+version: 2
+-->
+	{% include './header.html' %}
+
+	<body class="{% block body_class %}{% text 'body_class' label="Body Class" no_wrapper=True %}{% endblock %}">
+
+	{% block header %}
+		{% boolean "enabled_site_header" label='Enable Global Site Header', value=true, export_to_template_context=True %}
+		{% if widget_data.enabled_site_header.value %}
+			{% global_partial path="../templates/partials/site_header.html" %}
+		{% endif %}
+	{% endblock header %}
+
+	{% block body %}
+		<div class="sr-line-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 offset-md-2 sr-spacer-100 ">
+						{% email_simple_subscription "email_simple_subscription" input_placeholder='email@example.com', button_text='Unsubscribe', label='SR Backup Unsubscribe', header='Email Unsubscribe', overrideable=True, input_help_text='Your email address:' %}
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endblock body %}
+
+	{% block footer %}
+		{% boolean "enabled_site_footer" label='Enable Global Site Footer', value=true, export_to_template_context=True %}
+		{% if widget_data.enabled_site_footer.value %}
+			{% global_partial path="../templates/partials/site_footer.html" %}
+		{% endif %}
+	{% endblock footer %}
+
+	{% include './footer-includes.html' %}
+	</body>
+</html>

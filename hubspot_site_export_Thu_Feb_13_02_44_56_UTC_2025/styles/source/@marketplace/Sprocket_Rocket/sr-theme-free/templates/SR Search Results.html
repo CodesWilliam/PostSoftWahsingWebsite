@@ -1,0 +1,50 @@
+<!--
+templateType: search_results_page
+isAvailableForNewContent: true
+label: SR Search Results
+version: 2
+-->
+	{% include './header.html' %}
+	
+	{{ require_css('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') }}
+	{{ require_css(get_asset_url('../css/sr-search.css'), { async: true }) }}
+
+	<body class="{% block body_class %}{% text 'body_class' label="Body Class" no_wrapper=True %}{% endblock %}">
+
+	{% block header %}
+		{% boolean "enabled_site_header" label='Enable Global Site Header', value=true, export_to_template_context=True %}
+		{% if widget_data.enabled_site_header.value %}
+			{% global_partial path="../templates/partials/site_header.html" %}
+		{% endif %}
+	{% endblock header %}
+
+	{% block body %}
+	<div>
+		<div class="container-fluid sr-padding-full sr-line-top sr-line-bottom">
+			<div class="row  sr-spacer-50">
+				<div class="col-md-4 offset-md-4">
+					{% module "Site Search Input" path="@hubspot/search_input", label="Site Search Input", include_search_button="true" %}
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row  sr-spacer-100">
+			<div class="col-md-10 offset-md-1">
+				{% module "Site Search Results" path="@hubspot/search_results", label="Site Search Input" %}
+			</div>
+		</div>
+	</div>
+	{% endblock body %}
+
+	{% block footer %}
+		{% boolean "enabled_site_footer" label='Enable Global Site Footer', value=true, export_to_template_context=True %}
+		{% if widget_data.enabled_site_footer.value %}
+			{% global_partial path="../templates/partials/site_footer.html" %}
+		{% endif %}
+	{% endblock footer %}
+
+	{% include './footer-includes.html' %}
+	</body>
+</html>

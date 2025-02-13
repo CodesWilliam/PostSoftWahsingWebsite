@@ -1,0 +1,286 @@
+<!--
+  templateType: global_partial
+  label: Global Website Footer
+-->
+<footer class="footer">
+  {% dnd_area "footer"
+    label="Footer",
+    class="footer__container content-wrapper border-0"
+  %}
+
+ {% dnd_section
+  background_color="rgba(0, 0, 0, 1)",
+  padding={
+    "default" : {
+      "bottom" : "40px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=6
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/linked_image",
+        offset=0,
+        width=12,
+        horizontal_alignment="LEFT",
+        img={
+          "alt" : "fthemes-logo-small1",
+          "height" : 81,
+          "loading" : "lazy",
+          "max_height" : 81,
+          "max_width" : 250,
+          "size_type" : "auto",
+          "src" : "https://www.fthemes.net/hubfs/fthemes-logo-small1.png",
+          "width" : 250
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        offset=0,
+        width=12
+      %}
+        {% module_attribute "html" %}
+          <p><span>We design&nbsp;</span><a href="https://www.fthemes.net/hubspot-themes/">premium HubSpot themes</a><span>&nbsp;which are no-code, easy to use and fast performing to supercharge your business's inbound campaigns and revenue.</span></p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% dnd_column
+    offset=6,
+    width=6,
+    padding={
+      "default" : {
+        "left" : "0px",
+        "right" : "0px"
+      }
+    }
+  %}
+    {% dnd_row %}
+      {% dnd_column
+        offset=0,
+        width=12
+      %}
+        {% dnd_row %}
+          {% dnd_column
+            offset=0,
+            width=6
+          %}
+            {% dnd_row %}
+              {% dnd_module
+                path="@hubspot/header",
+                offset=0,
+                width=12,
+                header_tag="h4",
+                value="OUR SERVICES"
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+            {% dnd_row %}
+              {% dnd_module
+                path="@hubspot/simple_menu",
+                offset=0,
+                width=12,
+                menu_tree=[ {
+                  "children" : [ ],
+                  "isPublished" : false,
+                  "linkLabel" : "CMS Hub Maintenance",
+                  "type" : "PAGE_LINK"
+                }, {
+                  "children" : [ ],
+                  "isPublished" : false,
+                  "linkLabel" : "HubSpot Web Development",
+                  "type" : "PAGE_LINK"
+                }, {
+                  "children" : [ ],
+                  "isPublished" : false,
+                  "linkLabel" : "HubSpot Email Templates",
+                  "type" : "PAGE_LINK"
+                }, {
+                  "children" : [ ],
+                  "isPublished" : false,
+                  "linkLabel" : "HubSpot CMS Migration",
+                  "type" : "PAGE_LINK"
+                } ],
+                orientation="vertical"
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+          {% dnd_column
+            offset=6,
+            width=6
+          %}
+            {% dnd_row %}
+              {% dnd_module
+                path="@hubspot/header",
+                offset=0,
+                width=12,
+                header_tag="h4",
+                value="OUR COMPANY"
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+            {% dnd_row %}
+              {% dnd_module
+                path="../modules/Social Follow",
+                offset=0,
+                width=12,
+                social_links=[ {
+                  "accessibility" : {
+                    "title" : "Follow us on Facebook"
+                  },
+                  "custom_icon" : {
+                    "name" : "hubspot"
+                  },
+                  "social_account" : "facebook",
+                  "social_link" : {
+                    "no_follow" : false,
+                    "open_in_new_tab" : true,
+                    "url" : {
+                      "href" : "https://www.facebook.com",
+                      "type" : "EXTERNAL"
+                    }
+                  }
+                }, {
+                  "accessibility" : {
+                    "title" : "Follow us on LinkedIn"
+                  },
+                  "custom_icon" : {
+                    "name" : "hubspot"
+                  },
+                  "social_account" : "twitter",
+                  "social_link" : {
+                    "no_follow" : false,
+                    "open_in_new_tab" : true,
+                    "url" : {
+                      "href" : "https://www.linkedin.com",
+                      "type" : "EXTERNAL"
+                    }
+                  }
+                }, {
+                  "accessibility" : {
+                    "title" : "Follow us on Twitter"
+                  },
+                  "custom_icon" : {
+                    "name" : "hubspot"
+                  },
+                  "social_account" : "instagram",
+                  "social_link" : {
+                    "no_follow" : false,
+                    "open_in_new_tab" : true,
+                    "url" : {
+                      "href" : "https://www.twitter.com",
+                      "type" : "EXTERNAL"
+                    }
+                  }
+                }, {
+                  "accessibility" : {
+                    "title" : "Follow us on Instagram"
+                  },
+                  "custom_icon" : {
+                    "name" : "hubspot"
+                  },
+                  "social_account" : "linkedin",
+                  "social_link" : {
+                    "no_follow" : false,
+                    "open_in_new_tab" : true,
+                    "url" : {
+                      "href" : "https://www.instagram.com",
+                      "type" : "EXTERNAL"
+                    }
+                  }
+                } ],
+                styles={
+                  "size" : {
+                    "size" : 40
+                  },
+                  "spacing" : {
+                    "space_between_icons" : 5
+                  }
+                }
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+    {% dnd_section
+  background_color="rgba(0, 0, 0, 1)",
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "top" : "20px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/divider",
+        offset=0,
+        width=12,
+        color={
+          "color" : "#282828",
+          "opacity" : 100
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+    {% dnd_section
+  background_color="rgba(0, 0, 0, 1)",
+  padding={
+    "default" : {
+      "bottom" : "20px",
+      "top" : "20px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        offset=0,
+        width=12
+      %}
+        {% module_attribute "html" %}
+          <p style="text-align: center;"><span>©&nbsp;</span><a href="https://www.fthemes.net/">FThemes</a><span>&nbsp;2019-2022 | All rights reserved.</span></p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+    
+    
+
+  {% end_dnd_area %}
+     <a onclick="topFunction()" id="myBtn" title="Go to top">
+    <img src="https://f.hubspotusercontent00.net/hubfs/7712601/back-to-top.png" alt="back-to-top">
+  </a>
+    <div class="footer__container content-wrapper border-top-block">
+    {# Copyright information section #}
+    <div class="footer__copyright">
+      {% module_block module 'footer_copyright_text' path='@hubspot/text' label="privacy policy" %}
+      {% module_attribute 'value' %}© <a href="https://www.fthemes.net/">FThemes</a> 2019-{{ year }} | All rights reserved.{% end_module_attribute %}
+      {% end_module_block %}
+    </div>
+    {# End copyright information section #}
+
+  </div>
+</footer>

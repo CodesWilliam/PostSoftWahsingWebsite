@@ -1,0 +1,172 @@
+<!--
+templateType: blog_listing
+isAvailableForNewContent: true
+label: Blog Index/Listing
+screenshotPath: ../images/template-previews/blog-index.png
+-->
+{% set template_css = '../../css/templates/blog.css' %}
+{% extends './layouts/base.html' %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper">
+  {% dnd_area 'dnd_area'
+    label='Main section',
+    class='body-container body-container--blog-index'
+  %}
+
+  {# START: Hero Single Column #}
+  {% dnd_section
+  background_image={
+    "background_position" : "MIDDLE_CENTER",
+    "background_size" : "cover",
+    "image_url" : get_asset_url('../images/alley-bg.jpg')
+  },
+  padding={
+    "default" : {
+      "bottom" : "180px"
+    },
+    "mobile" : {
+      "bottom" : "100px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-hero-2",
+        offset=0,
+        width=12,
+        button_1={
+          "button_text" : ""
+        },
+        button_2={
+          "button_text" : ""
+        },
+        heading_text="Thrifty <strong>Blog</strong>",
+        styles={
+          "heading" : {
+            "heading_color" : {
+              "color" : "#FFFFFF",
+              "opacity" : 100
+            },
+            "heading_font_size" : 60
+          }
+        },
+        tag_line=""
+      %}
+  {% module_attribute "rich_text" %}
+
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# END: Hero Single Column #}
+
+  {# START: Blog Listing Hero #}
+  {% dnd_section
+  background_color="rgba(243, 243, 247, 1)",
+  padding={
+    "mobile" : {
+      "bottom" : "50px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/th-blog-listing-hero",
+        offset=0,
+        width=12,
+        card={
+          "author" : "John Doe",
+          "button" : {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "http://484997.hs-sites.com/thrifty/blog/get-out-there-and-think-outside-the-box",
+                "type" : "EXTERNAL"
+              }
+            }
+          },
+          "date" : "22 April 2022",
+          "image" : {
+            "alt" : "england-shoes",
+            "height" : 960,
+            "loading" : "lazy",
+            "max_height" : 960,
+            "max_width" : 1280,
+            "size_type" : "auto_custom_max",
+            "src" : get_asset_url('../images/england-shoes.jpg'),
+            "width" : 1280
+          },
+          "title" : "Get out there and think outside the box"
+        },
+        heading_text="Small Businesses",
+        styles={
+          "card" : {
+            "background_color" : {
+              "color" : "#f3f3f7",
+              "opacity" : 10
+            }
+          },
+          "enable_top_negative" : true,
+          "heading" : {
+            "heading_font_size" : 40,
+            "heading_type" : "<h2>"
+          },
+          "tagline" : {
+            "tag_line_divider" : true
+          }
+        },
+        tag_line="Featured Insights for"
+      %}
+  {% module_attribute "rich_text" %}
+
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {# START: Blog Listing Hero #}
+
+  {# START: Blog Listings #}
+  {% dnd_section %}
+  {% dnd_module
+    path="../modules/th-blog-listings-2",
+    offset=0,
+    width=12
+  %}
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+  {# END: Blog Listings #}
+
+  {# START: Blog CTA #}
+  {% dnd_section %}
+  {% dnd_module
+    path="../modules/th-cta-1",
+    offset=0,
+    width=12
+  %}
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+  {# END: Blog CTA #}
+
+  {# START: Subscribe #}
+  {% dnd_section %}
+  {% dnd_module path='../modules/th-subscribe-form' %}
+  {% end_dnd_module %} 
+  {% end_dnd_section %}
+  {# END: Subscribe #}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

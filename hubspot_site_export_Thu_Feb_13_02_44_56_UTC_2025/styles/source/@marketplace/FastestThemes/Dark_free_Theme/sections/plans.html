@@ -1,0 +1,42 @@
+<!--
+  templateType: section
+  label: Plan
+  isAvailableForNewContent: true
+  screenshotPath: ../images/plan.png
+  description: "Pricing Plan"
+-->
+
+{% dnd_section
+  background_color="rgba(23, 23, 29, 1)",
+  padding={
+    "default" : {
+      "bottom" : "50px",
+      "left" : "15px",
+      "right" : "15px",
+      "top" : "50px"
+    },
+    "mobile" : {
+      "top" : "0px"
+    }
+  },
+  full_width=false
+%}
+  {% dnd_module
+    path="./../modules/Plans",
+    offset=0,
+    width=4
+  %}
+  {% end_dnd_module %}
+  {% dnd_module
+    path="./../modules/Plans",
+    offset=4,
+    width=4
+  %}
+  {% end_dnd_module %}
+  {% dnd_module
+    path="./../modules/Plans",
+    offset=8,
+    width=4
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}

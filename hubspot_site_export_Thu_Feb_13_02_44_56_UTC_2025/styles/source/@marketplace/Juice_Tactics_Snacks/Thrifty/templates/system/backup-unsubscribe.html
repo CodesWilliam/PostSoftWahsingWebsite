@@ -1,0 +1,21 @@
+<!--
+templateType: email_backup_unsubscribe_page
+isAvailableForNewContent: true
+label: Email Backup Unsubscribe
+screenshotPath: ../../images/template-previews/backup-unsubscribe.png
+-->
+{% set template_css = '../../css/templates/system.css' %}
+{% extends '../layouts/base.html' %}
+
+{# pageTitle is used on system templates for setting a value for the title tag #}
+{% set pageTitle = "Email Backup Unsubscribe" %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper">
+  <div class="body-container body-container--system">
+    {# Systems Backup Unsubscribe Hero #}
+    {% module "th_systems_backup_unsubscribe_hero" path='../../modules/th-systems-backup-unsubscribe-hero', label="Systems Backup Unsubscribe Hero" %}
+  </div>
+</main>
+{% endblock body %}

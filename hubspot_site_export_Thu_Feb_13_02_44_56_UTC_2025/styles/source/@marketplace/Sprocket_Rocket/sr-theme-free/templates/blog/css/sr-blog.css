@@ -1,0 +1,25 @@
+.avatar img {
+    max-width: 50px;
+    border-radius: 100%;
+}
+.author-section .meta {
+    line-height: 1.2;
+}
+.author-section {
+    background: #f5f7f9;
+    padding: 2rem;
+}
+.author-social-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.author-social-links svg,
+.author-social-links svg g,
+.author-social-links svg path{
+    max-height: 16px;
+}
+.hs-inline-edit #hs_cos_wrapper_post_body {
+    padding: 1rem
+}

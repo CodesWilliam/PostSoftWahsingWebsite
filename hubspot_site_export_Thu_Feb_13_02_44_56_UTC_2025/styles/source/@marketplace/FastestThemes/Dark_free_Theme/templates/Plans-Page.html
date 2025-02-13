@@ -1,0 +1,172 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Plans Page
+  screenshotPath: ../images/template-previews/dark-free-theme-plans.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper">
+  {% dnd_area "dnd_areainternal" class='body-container', label='Main section' %}
+	 {% dnd_section 
+		  padding={
+				'top': 0,
+				'bottom': 0,
+				'left': 0,
+				'right': 0
+			}, background_color={
+  'r':1,
+  'g':1,
+  'b':1,
+  'a':1
+  },
+			full_width=true
+		%}
+   {% dnd_module 'Hero_Section' 
+				path='./../modules/Hero_Section.module',
+				label="Hero_Section",
+				width=12
+			%}
+			{% end_dnd_module %}
+		{% end_dnd_section %}
+
+{# Plan section #}
+
+ {% dnd_section 
+		  padding={
+				'bottom': 0,
+				'left': 10,
+				'right': 10
+			},
+      background_color={
+        r: 23,
+        g: 24,
+        b: 31,
+        a: 1
+      },
+			width=12
+		%}
+   {% dnd_module 'Heading-section' 
+				path='./../modules/Heading-section.module',
+				label="Heading-section",
+				width=12
+			%}
+		 {% end_dnd_module %}
+		{% end_dnd_section %}
+  {% dnd_section
+   padding={
+				'top': 50,
+				'bottom': 50,
+				'left': 10,
+				'right': 10
+			},background_color={
+        r: 23,
+        g: 24,
+        b: 31,
+        a: 1
+      },
+          width=12,
+      vertical_alignment='TOP'
+    %}
+  {% dnd_module 'Plans' 
+     path='./../modules/Plans.module', 
+     label="Plans", 
+     offset=0,
+     width=4 %} 
+  {% end_dnd_module %}
+  {% dnd_module 'Plans' 
+     path='./../modules/Plans.module', 
+     label="Plans", 
+     offset=4,
+     width=4 %} 
+  {% end_dnd_module %}
+  {% dnd_module 'Plans' 
+     path='./../modules/Plans.module', 
+     label="Plans", 
+     offset=8,
+     width=4 %} 
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+
+{# Plan Section #}
+	{% dnd_section 
+		  padding={
+				'bottom': 0,
+				'left': 0,
+				'right': 0
+			},
+      background_color={
+        r: 0,
+        g: 0,
+        b: 0,
+        a: 1
+      },
+			width=12
+		%}
+   {% dnd_module 'Heading-section' 
+				path='./../modules/Heading-section.module',
+				label="Heading-section",
+				width=12
+			%}
+		 {% end_dnd_module %}
+		{% end_dnd_section %}
+   {% dnd_section
+    padding={
+           'right':10,
+           'left': 10,
+           'top':20,
+            
+          },
+          background_color={
+        r: 0,
+        g: 0,
+        b: 0,
+        a: 1
+      },
+          width_full=true,
+      vertical_alignment='TOP'
+    %}
+  {% dnd_module 'Product_Feature' 
+     path='./../modules/Product_Feature.module', 
+     label="Product_Feature", 
+     offset=0,
+     width=4 %} 
+  {% end_dnd_module %}
+  {% dnd_module 'Product_Feature' 
+     path='./../modules/Product_Feature.module', 
+     label="Product_Feature", 
+     offset=4,
+     width=4 %} 
+  {% end_dnd_module %}
+  {% dnd_module 'Product_Feature' 
+     path='./../modules/Product_Feature.module', 
+     label="Product_Feature", 
+     offset=8,
+     width=4 %} 
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+  
+  {% dnd_section 
+		  padding={
+				'top': 0,
+				'bottom': 0,
+				'left': 0,
+				'right': 0
+			},
+			full_width=true
+		%}
+   {% dnd_module 'CTA_Button' 
+				path='./../modules/CTA_Button.module',
+				label="CTA_Button",
+				width=12
+			%}
+		
+				
+			{% end_dnd_module %}
+		{% end_dnd_section %}
+  
+  {% end_dnd_area %}
+   
+</main>
+{% endblock body %}

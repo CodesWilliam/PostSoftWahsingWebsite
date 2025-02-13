@@ -1,0 +1,21 @@
+<!--
+templateType: email_subscription_preferences_page
+isAvailableForNewContent: true
+label: Email Subscription Preferences
+screenshotPath: ../../images/template-previews/subscription-preferences.png
+-->
+{% set template_css = '../../css/templates/system.css' %}
+{% extends '../layouts/base.html' %}
+
+{# pageTitle is used on system templates for setting a value for the title tag #}
+{% set pageTitle = "Email Subscription Communication Preferences" %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper">
+  <div class="body-container body-container--system">
+    {# Systems Subscription Preferences Hero #}
+    {% module "th_systems_subscription_preferences_hero" path='../../modules/th-systems-subscription-preferences-hero', label="Systems Subscription Preferences Hero" %}
+  </div>
+</main>
+{% endblock body %}
